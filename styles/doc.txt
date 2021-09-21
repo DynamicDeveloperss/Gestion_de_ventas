@@ -1,0 +1,1 @@
+Ignorar este archivo, solo agregue porque git no hace commits de carpetas vacias
