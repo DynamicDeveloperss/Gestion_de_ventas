@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: medium;
+    min-height: 100%;
+}
+
+.grid-container > *{
+    text-align: center;
+}
+
+.header{
+    grid-area: header;
+    background-color: antiquewhite;
+}
+
+.main{
+    grid-area: main;
+    background-color: cadetblue;
+}
+
+.aside1{
+    grid-area: aside1;
+    background-color: coral;
+}
+
+.aside2{
+    grid-area: aside2;
+    background-color: aqua;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+    grid-template-rows: 60px auto;
+    grid-template-areas: 
+        "header header header"
+        "aside1 main aside2";
+}
