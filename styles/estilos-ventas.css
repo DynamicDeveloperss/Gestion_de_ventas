@@ -4,6 +4,10 @@
     padding: 0px;
 }
 
+ul{
+    list-style: none;
+}
+
 html{
     height: 100%;
 }
@@ -14,13 +18,15 @@ body{
     min-height: 100%;
 }
 
-.grid-container > *{
-    text-align: center;
-}
-
+/*grid-area: nombre para identificar el area que ocupa un bloque en el espacio*/
+/*las grid-areas luego se organizan en el espacio usando la propiedad grid-templates-area*/
 .header{
     grid-area: header;
     background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main{
@@ -40,9 +46,36 @@ body{
 
 .grid-container{
     display: grid;
-    grid-template-columns: 200px auto 200px;
-    grid-template-rows: 60px auto;
-    grid-template-areas: 
+    grid-template-columns: 230px auto 230px;
+    grid-template-rows: 75px auto;
+    grid-template-areas: /*Esta propiedad permite distribuir las diferentes areas establecidas es el espacio*/
         "header header header"
         "aside1 main aside2";
+}
+
+/*Estilos para el header/barra de nevegacion*/
+
+.logo{
+    width: 60px;
+    height: auto;
+    margin: 5px;
+}
+
+.nombre-logo{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: right;
+}
+
+.nav-bar > li{
+    margin: 30px;
+    padding: 5px;
+}
+
+.fas{
+    font-size: 24px;
 }
