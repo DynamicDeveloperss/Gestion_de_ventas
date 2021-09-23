@@ -34,30 +34,22 @@ input{
 
 .main{
     grid-area: main;
-    background-color: cadetblue;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: right;
-}
-
-.aside1{
-    grid-area: aside1;
-    background-color: coral;
-}
-
-.aside2{
-    grid-area: aside2;
-    background-color: aqua;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .grid-container{
     display: grid;
-    grid-template-columns: 230px auto 230px;
+    grid-template-columns: 200px auto 200px;
     grid-template-rows: 75px auto;
     grid-template-areas: /*Esta propiedad permite distribuir las diferentes areas establecidas es el espacio*/
         "header header header"
-        "aside1 main aside2";
+        "main main main";
 }
 
 /*Estilos para el header/barra de nevegacion*/
@@ -87,12 +79,17 @@ input{
     font-size: 24px;
 }
 
+.subtitulos{
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 24px;
+}
 /*Estilos de la seccion principal*/
 
 .forms{
     display: flex;
     flex-direction: column;
-    margin: 25px;
+    margin: 15px;
 }
 
 .forms > input{
@@ -100,13 +97,7 @@ input{
     padding: 3px;
     border-radius: 5px;
     font-size: 17px;
-    border: none;
-}
-
-.forms > h3{
-    margin-bottom: 10px;
-    text-align: left;
-    font-size: 24px;
+    border: 0.5px solid cadetblue;
 }
 
 .forms > input::placeholder{
@@ -116,7 +107,8 @@ input{
 .forms > label{
     margin-left: 5px;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 15px;
 }
 
 #forma-pago{
@@ -126,4 +118,71 @@ input{
 #forma-pago > label{
     font-weight: normal;
     padding-right: 15px;
+}
+
+/*Estilos para la tabla donde se muestran los registros de venta*/
+
+table{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 0.5px solid cadetblue;
+}
+
+.section-tabla {
+    height: fit-content;
+    margin: 15px;
+    padding: 5px;
+}
+
+.tabla-ventas thead th:nth-child(1){
+    width: 8%;
+}
+
+.tabla-ventas thead th:nth-child(2){
+    width: 8%;
+}
+
+.tabla-ventas thead th:nth-child(3){
+    width: 30%;
+}
+
+.tabla-ventas thead th:nth-child(4){
+    width: 6%;
+}
+
+.tabla-ventas thead th:nth-child(5){
+    width: 8%;
+}
+
+.tabla-ventas thead th:nth-child(6){
+    width: 8%;
+}
+
+.tabla-ventas thead th:nth-child(7){
+    width: 8%;
+}
+
+.tabla-ventas thead th:nth-child(8){
+    width: 8%;
+}
+
+.tabla-ventas th, td{
+    padding: 20px;
+    text-align: center;
+}
+
+.tabla-ventas th{
+    background-color: white;
+}
+
+.tabla-ventas tr:nth-child(odd){
+    background-color: whitesmoke;
+}
+.tabla-ventas tr:hover{
+    background-color:#D1D9D9;
+}
+
+.tabla-ventas thead{
+    border-bottom: 1px solid gray;
 }
