@@ -89,45 +89,41 @@ input{
 
 /*Estilos de la seccion principal*/
 
-.form-comprador{
+.forms{
     display: flex;
     flex-direction: column;
     margin: 25px;
 }
 
-.form-comprador > input{
+.forms > input{
     margin: 5px;
-    padding: 5px;
+    padding: 3px;
     border-radius: 5px;
     font-size: 17px;
+    border: none;
 }
 
-.form-comprador > h3{
+.forms > h3{
     margin-bottom: 10px;
     text-align: left;
     font-size: 24px;
 }
 
-.form-comprador > input::placeholder{
-    font-size: 17px;
+.forms > input::placeholder{
+    font-size: 16px;
 }
 
-.form-comprador input:nth-child(2){
-    width: 70%;
+.forms > label{
+    margin-left: 5px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-.form-comprador input:nth-child(3){
-    width: 20%;
+#forma-pago{
+    margin: 5px;
 }
 
-.form-comprador input:nth-child(4){
-    width: 50%;
-}
-
-.form-comprador input:nth-child(5){
-    width: 20%;
-}
-
-.form-comprador input:nth-child(6){
-    width: 80%;
+#forma-pago > label{
+    font-weight: normal;
+    padding-right: 15px;
 }
