@@ -25,7 +25,7 @@ input{
 /*las grid-areas luego se organizan en el espacio usando la propiedad grid-templates-area*/
 .header{
     grid-area: header;
-    background-color: antiquewhite;
+    background-color: rgb(0, 132, 255);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -97,7 +97,7 @@ input{
     padding: 3px;
     border-radius: 5px;
     font-size: 17px;
-    border: 0.5px solid cadetblue;
+    border: 0.5px solid rgb(0, 132, 255);
 }
 
 .forms > input::placeholder{
@@ -126,7 +126,7 @@ table{
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    border: 0.5px solid cadetblue;
+    border: 0.5px solid rgb(0, 132, 255);
 }
 
 .section-tabla {
@@ -144,7 +144,7 @@ table{
 }
 
 .tabla-ventas thead th:nth-child(3){
-    width: 30%;
+    width: 25%;
 }
 
 .tabla-ventas thead th:nth-child(4){
@@ -156,16 +156,26 @@ table{
 }
 
 .tabla-ventas thead th:nth-child(6){
-    width: 8%;
+    width: 10%;
 }
 
 .tabla-ventas thead th:nth-child(7){
-    width: 8%;
+    width: 10%;
 }
 
 .tabla-ventas thead th:nth-child(8){
     width: 8%;
 }
+
+.tabla-ventas thead th:nth-child(9){
+    width: 8%;
+}
+
+.tabla-ventas thead th:nth-child(10){
+    width: 8%;
+}
+
+
 
 .tabla-ventas th, td{
     padding: 20px;
