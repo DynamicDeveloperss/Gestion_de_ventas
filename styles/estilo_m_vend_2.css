@@ -29,14 +29,10 @@ html {
     background-color: rgb(12, 116, 251);
 }
 
-.navbar {
-    grid-area: navbar;
-    background-color: cadetblue;
-}
 
 .sidebar {
     grid-area: sidebar;
-    background-color:coral;
+    background-color:rgb(206, 206, 206);
 }
 
 .menu {
@@ -54,12 +50,12 @@ html {
 }
 
 .checkbox:checked ~ .menu {
-    left: 19%;
+    left: 24%;
     border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .left-panel {
-    width: 19%;
+    width: 24%;
     height:100%;
     background: whitesmoke;
     position: absolute;
@@ -87,7 +83,7 @@ ul a {
 
 li {
     list-style: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
     padding: 0rem;
     margin: 0rem ;
@@ -96,7 +92,7 @@ li {
 
 li:hover {
     color: white;
-    border: 0.2px solid rgb(78, 78, 78);
+    border: 0px solid rgb(78, 78, 78);
     background-color: rgb(0, 132, 255);
 }
 
@@ -108,7 +104,7 @@ li:hover {
 
 .footer {
     grid-area: footer;
-    background-color: darkolivegreen;
+    background-color: rgb(80, 107, 255);
 }
 
 .grid-container {
@@ -147,6 +143,8 @@ li:hover {
 .img-centro {
     margin: 10px auto 10px;
     display: block;
+    width: 100px;
+    height: 100px;
     
 }
 
@@ -154,19 +152,19 @@ li:hover {
     margin-top: 90px;
     margin-bottom: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (max-width: 200px) {
 
     .checkbox:checked ~ .menu {
-        left: 25%;
+        left: 30%;
         border-radius: 0 0.5rem 0.5rem 0;
     }
     
     .left-panel {
-        width: 25%;
+        width: 30%;
         height:100%;
         background: whitesmoke;
         position: absolute;
@@ -178,7 +176,5 @@ li:hover {
         transition: left 0.2s;
     
     }
-
-
 
 }
