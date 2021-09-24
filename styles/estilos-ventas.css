@@ -82,6 +82,7 @@ input{
 
 .subtitulos{   
     margin-top: 20px;
+    margin-bottom: 5px;
     text-align: left;
     font-size: 24px;
 }
@@ -128,8 +129,7 @@ input{
     padding: 15px;
     width: 150px;
     border: none;
-    border-radius: 7px;
-    box-shadow: 3px 3px #B1E693;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -139,6 +139,12 @@ input{
 
 .btn-verde{
     background-color: #6ECB63;
+    box-shadow: 3px 3px #B1E693;
+}
+
+.btn-rojo{
+    background-color: #FF0000;
+    box-shadow: 3px 3px #FE8F8F;
 }
 
 
@@ -153,12 +159,12 @@ table{
 
 .section-tabla {
     height: fit-content;
-    margin: 15px;
+    margin: 10px;
     padding: 5px;
 }
 
 .tabla-ventas thead th:nth-child(1){
-    width: 8%;
+    width: 1%;
 }
 
 .tabla-ventas thead th:nth-child(2){
@@ -166,15 +172,15 @@ table{
 }
 
 .tabla-ventas thead th:nth-child(3){
-    width: 25%;
+    width: 8%;
 }
 
 .tabla-ventas thead th:nth-child(4){
-    width: 6%;
+    width: 25%;
 }
 
 .tabla-ventas thead th:nth-child(5){
-    width: 8%;
+    width: 6%;
 }
 
 .tabla-ventas thead th:nth-child(6){
@@ -186,7 +192,7 @@ table{
 }
 
 .tabla-ventas thead th:nth-child(8){
-    width: 8%;
+    width: 10%;
 }
 
 .tabla-ventas thead th:nth-child(9){
@@ -194,6 +200,10 @@ table{
 }
 
 .tabla-ventas thead th:nth-child(10){
+    width: 8%;
+}
+
+.tabla-ventas thead th:nth-child(11){
     width: 8%;
 }
 
