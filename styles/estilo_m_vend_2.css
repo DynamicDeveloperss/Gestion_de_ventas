@@ -45,7 +45,7 @@ html {
     top: 4%;
     left: 1%;
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: white;
     text-align: center;
     transition: left 0.2s;
@@ -54,12 +54,12 @@ html {
 }
 
 .checkbox:checked ~ .menu {
-    left: 20%;
+    left: 19%;
     border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .left-panel {
-    width: 20%;
+    width: 19%;
     height:100%;
     background: whitesmoke;
     position: absolute;
@@ -87,17 +87,17 @@ ul a {
 
 li {
     list-style: none;
-    font-size: 2rem;
-    text-align: left;
+    font-size: 1.5rem;
+    text-align: center;
     padding: 0rem;
     margin: 0rem ;
 
 }
 
 li:hover {
-    color:rgb(78, 78, 78);
+    color: white;
     border: 0.2px solid rgb(78, 78, 78);
-    margin-right: 60px;
+    background-color: rgb(0, 132, 255);
 }
 
 
@@ -124,14 +124,6 @@ li:hover {
 
 @media (min-width: 600px) {
     .grid-container {
-        /* grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto 100px;
-        grid-template-areas:
-        "header  header"
-        "navbar  navbar"
-        "sidebar  main"
-        "footer  footer"; */
-
         grid-template: 
         "header  header" 60px
         "main    sidebar" auto
@@ -160,8 +152,33 @@ li:hover {
 
 .divimg {
     margin-top: 90px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
+}
+
+@media screen and (min-width: 300px) {
+
+    .checkbox:checked ~ .menu {
+        left: 25%;
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+    
+    .left-panel {
+        width: 25%;
+        height:100%;
+        background: whitesmoke;
+        position: absolute;
+        top: 0px;
+        left: -40%;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.2s;
+    
+    }
+
+
+
 }
