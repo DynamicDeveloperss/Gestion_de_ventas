@@ -80,8 +80,8 @@ input{
     font-size: 24px;
 }
 
-.subtitulos{
-    margin-bottom: 5px;
+.subtitulos{   
+    margin-top: 20px;
     text-align: left;
     font-size: 24px;
 }
@@ -120,6 +120,27 @@ input{
     font-weight: normal;
     padding-right: 15px;
 }
+
+.btn{
+    font-size: medium;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 15px;
+    width: 150px;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 3px 3px #B1E693;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.btn-verde{
+    background-color: #6ECB63;
+}
+
 
 /*Estilos para la tabla donde se muestran los registros de venta*/
 
