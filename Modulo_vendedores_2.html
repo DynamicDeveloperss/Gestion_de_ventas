@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Gestion de ventas</title>
     <link rel="stylesheet" href="/styles/estilo_m_vend_2.css">
+    <link rel="stylesheet" href="/styles/table.css">
 </head>
 <body class="grid-container">
     <header class="header">HEADER</header>
@@ -29,7 +30,70 @@
     </div>
     <aside class="sidebar">
     </aside>
-    <article class="main">ARTICLE</article>
+    <article class="main">
+        <div class="div-document">
+            <div class="div-content container">
+                <h2>Registro de vendedores</h2>
+                <br/>
+            </div>
+                <div>
+                    <table class="tabla-ventas">
+                        <thead>
+                            <th>Nº</th>
+                            <th>ID</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Especialidad</th>
+                            <th>Telefono</th>
+                            <th>Fecha de ingreso</th>
+                            <th></th>
+                        </thead>
+                        <tr>
+                            <td></td>
+                            <td><input type="text" placeholder="ID" style="width: 80px;"></td>
+                            <td><input type="text" placeholder="Nombres" style="width: 90px;"></td>
+                            <td><input type="text" placeholder="Apellidos" style="width: 90px;"></td>
+                            <td><input type="text" placeholder="Especialidad" style="width: 80px;"></td>
+                            <td><input type="text" placeholder="Telefono" style="width: 80px;">.</td>
+                            <td><input type="date" placeholder="Fecha" style="width: 100px;">.</td>
+                            <td><button type="submit">Ingresar</button></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1030456737</td>
+                            <td>Nikolas Sebastian</td>
+                            <td>Ibague Amaya</td>
+                            <td>Lorem</td>
+                            <td>24-05-2021</td>
+                            <td>Lorem.</td>
+                            <td><a href=""><img src="/src/imgs_m_vendedores/trash.png" class="trash-icon"></a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Lorem</td>
+                            <td>Lorem</td>
+                            <td>Lorem</td>
+                            <td>Lorem</td>
+                            <td>Lorem</td>
+                            <td>Lorem.</td>
+                            <td><a href=""><img src="/src/imgs_m_vendedores/trash.png" class="trash-icon"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Lorem</td>
+                            <td>Lorem</td>
+                            <td>Lorem</td>
+                            <td>Lorem</td>
+                            <td>Lorem</td>
+                            <td>Lorem.</td>
+                            <td><a href=""><img src="/src/imgs_m_vendedores/trash.png" class="trash-icon"></td>
+                        </tr>
+                       
+                    </table>
+                </div>
+        </div>
+    </article>
     <footer class="footer">FOOTER</footer>  
 </body>
 </html>
