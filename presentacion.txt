@@ -1,0 +1,3 @@
+nombre : Carolina Naranjo
+rol: Scrum Master
+grupo: Dynamic Developers
