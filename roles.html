@@ -2,59 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links para font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- Links para google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/estilos_roles.css">
     <title>modulo roles</title>
 </head>
-<body>
-    <form>
-        <fieldset>
+<body class="grid-container">
+        <header class="header">
+            <div class="nombre-logo">
+                <i class="fas fa-align-justify"></i>
+                <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" class="logo">
+                <h1>Nombre App</h1>
+            </div>
+            <nav>
+                <ul class="nav-bar">
+                    <li><i class="fas fa-home"></i></li>
+                    <li><i class="fas fa-user-circle"></i></li>
+                </ul>
+            </nav>
+        </header>
+    <main class="main">
+        <section  class="main-logo"> 
+            <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" class="logo-Grande">
+            <h1 class="titulo-principal">NEW ANDROID</h1>
+        </section>
+        <section>    
+        <form action="" class="forms">
+            <h3 class="subtitulos">REGISTRO USUARIOS</h3>
             <br/>
-            <legend>NEW ANDROID</legend>
-            <div>
                 <label for="apellidos">Apellidos </label>
-                <input name="apellidos" placeholder="Perez Perez" />
-            </div>
-            <br/>
-            <div>
-                <label for="nombre">
-            Nombres
-                    <input name="autor" placeholder="Pepito " />
-                </label>
-            </div>
-            <br/>
-            <div>
-                <label>
-                Email
-                <input type="email" placeholder="escribe  el email" required>
-                </label>
-            </div>
-            <br/>
-            <div>
+                <input type="text" name="apellidos" placeholder="Perez Perez" />
+                <label for="nombre">Nombres </label>
+                <input  type="text" name="nombre" placeholder="Pepito " />
+                <label for="email">Email</label>
+                <input type="email" placeholder="escribe  el email" required>                
                 <label for="cargo"> Cargo </label>
-                <input name="sueldo" placeholder="" />
-            </div>
-            <br/>
-            <div>
+                <input name="sueldo" placeholder="" type="text" />
                 <label for="sueldo"> Sueldo </label>
-                <input name="sueldo" placeholder="" />
-            </div>
-            <br/>
-            <div>
+                <input name="sueldo" placeholder=""  type="number"/>
                 <label for="turno">Turno</label>
-                <input name="turno" placeholder="" />
-            </div>
-            <br/>
-            <div>
-                <label for="codigo">Codigo </label>
-                <input name="codigo" placeholder="" />
-            </div>
-            <br/>
-            <div>
-                <button type="submit">Enviar Datos</button>
-                <button type="reset">Reiniciar</button>
-            </div>
-        </fieldset>
-    </form>
+                <input name="turno" placeholder="" type="text" />
+                <label for="codigo">Identificacion </label>
+                <input name="identificacion" placeholder="" type="number"/>
+                <section>
+                    <h3 class="subtitulos">Roles de usuario</h3>
+                <select name="roles" id="rol" class="roles">
+                    <option value="administrador">Administrador</option>
+                    <option value="vendedor">Vendedor</option>
+                    <option value="usuario">Usuario</option>
+                </select>  
+
+                    <h3 class="subtitulos">Estado del Usuario</h3>
+                    <select name="estado" id="rol" class="roles">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="autorizado">Autorizado</option>
+                        <option value="no autorizado">No Autorizado</option>
+                    </select>  
+                </section>      
+            <br/>        
+                <button type="submit" class="btn btn-verde">Enviar Datos</button>
+                <button type="reset" class="btn btn-verde" >Reiniciar</button>
+            
+        </form>
+    </section>
+    </main>  
     
 </body>
 </html>
