@@ -22,8 +22,7 @@ input{
     outline: none;
     border: none;
 }
-/*grid-area: nombre para identificar el area que ocupa un bloque en el espacio*/
-/*las grid-areas luego se organizan en el espacio usando la propiedad grid-templates-area*/
+
 .header{
     grid-area: header;
     background-color: rgb(0, 132, 255);
@@ -49,12 +48,10 @@ input{
     display: grid;
     grid-template-columns: 200px auto 200px;
     grid-template-rows: 75px auto;
-    grid-template-areas: /*Esta propiedad permite distribuir las diferentes areas establecidas es el espacio*/
+    grid-template-areas: 
         "header header header"
         "main main main";
 }
-
-/*Estilos para el header/barra de nevegacion*/
 
 .logo{
     width: 60px;
@@ -137,15 +134,6 @@ input{
     font-size: 15px;
 }
 
-#forma-pago{
-    margin: 5px;
-}
-
-#forma-pago > label{
-    font-weight: normal;
-    padding-right: 15px;
-}
-
 .btn{
     font-size: medium;
     margin-top: 20px;
@@ -155,6 +143,19 @@ input{
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+select{
+    font-size: medium;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 15px;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+select:hover{
+    transform: scale(1.1);
 }
 
 .btn:hover{
@@ -166,105 +167,6 @@ input{
     box-shadow: 3px 3px #B1E693;
 }
 
-.btn-rojo{
-    background-color: #FF0000;
-    box-shadow: 3px 3px #FE8F8F;
-}
-
-
-/*Estilos para la tabla donde se muestran los registros de venta*/
-
-table{
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    border: 0.5px solid rgb(0, 132, 255);
-}
-
-.section-tabla {
-    height: fit-content;
-    margin: 10px;
-    padding: 5px;
-}
-
-.tabla-ventas thead th:nth-child(1){
-    width: 1%;
-}
-
-.tabla-ventas thead th:nth-child(2){
-    width: 10%;
-}
-
-.tabla-ventas thead th:nth-child(3){
-    width: 10%;
-}
-
-.tabla-ventas thead th:nth-child(4){
-    width: 25%;
-}
-
-.tabla-ventas thead th:nth-child(5){
-    width: 15%;
-}
-
-.tabla-ventas thead th:nth-child(6){
-    width: 10%;
-}
-
-.tabla-ventas thead th:nth-child(7){
-    width: 10%;
-}
-
-.tabla-ventas thead th:nth-child(8){
-    width: 10%;
-}
 
 
 
-
-.tabla-ventas th, td{
-    padding: 20px;
-    text-align: center;
-}
-
-.tabla-ventas th{
-    background-color: white;
-}
-
-.tabla-ventas tr:nth-child(odd){
-    background-color: whitesmoke;
-}
-.tabla-ventas tr:hover{
-    background-color:#D1D9D9;
-}
-
-.tabla-ventas thead{
-    border-bottom: 1px solid gray;
-}
-
-.combo-estado{
-    background-color: transparent;
-    width: 110px;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.input-buscar{
-    width: 20%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 0.5px solid rgb(0, 132, 255);
-    border-radius: 5px;
-}
-
-.input-buscar > input{
-    margin: 5px;
-    padding: 3px;
-    border-radius: 5px;
-    font-size: 17px;
-}
-
-.fa-search{
-    font-size: 20px;
-}
