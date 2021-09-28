@@ -38,7 +38,7 @@ input{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: left;
+    align-items: center;
     margin-bottom: 15px;
     margin-left: 20px;
     margin-right: 20px;
@@ -66,6 +66,10 @@ input{
     align-items: center;
 }
 
+.nombre-logo > i{
+    margin: 30px;
+}
+
 .nav-bar{
     display: flex;
     align-items: right;
@@ -89,12 +93,15 @@ input{
 /*Estilos de la seccion principal*/
 
 .forms{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 15px;
 }
 
 .forms > input{
+    width: 800px;
     margin: 5px;
     padding: 3px;
     border-radius: 5px;
@@ -168,11 +175,11 @@ table{
 }
 
 .tabla-ventas thead th:nth-child(2){
-    width: 8%;
+    width: 10%;
 }
 
 .tabla-ventas thead th:nth-child(3){
-    width: 8%;
+    width: 10%;
 }
 
 .tabla-ventas thead th:nth-child(4){
@@ -180,7 +187,7 @@ table{
 }
 
 .tabla-ventas thead th:nth-child(5){
-    width: 6%;
+    width: 15%;
 }
 
 .tabla-ventas thead th:nth-child(6){
@@ -195,17 +202,6 @@ table{
     width: 10%;
 }
 
-.tabla-ventas thead th:nth-child(9){
-    width: 8%;
-}
-
-.tabla-ventas thead th:nth-child(10){
-    width: 8%;
-}
-
-.tabla-ventas thead th:nth-child(11){
-    width: 8%;
-}
 
 
 
@@ -227,4 +223,12 @@ table{
 
 .tabla-ventas thead{
     border-bottom: 1px solid gray;
+}
+
+.combo-estado{
+    background-color: transparent;
+    width: 110px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
 }

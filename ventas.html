@@ -16,13 +16,14 @@
 <body class="grid-container">
     <header class="header">
         <div class="nombre-logo">
+            <i class="fas fa-align-justify"></i>
             <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" class="logo">
             <h1>Nombre App</h1>
         </div>
         <nav>
             <ul class="nav-bar">
                 <li><i class="fas fa-home"></i></li>
-                <li><i class="fas fa-align-justify"></i></li>
+                <li><i class="fas fa-user-circle"></i></li>
             </ul>
         </nav>
     </header>
@@ -43,16 +44,9 @@
                 <label for="">Cantidad</label>
                 <input type="number" placeholder="Cantidad" name="cantidad">
                 <label for="">Valor de la Venta</label>
-                <input type="number" placeholder="Valor" name="valor">
+                <input type="text" placeholder="Valor" name="valor">
                 <label for="fecha-venta">Fecha de Venta</label>
                 <input type="date" id="fecha-venta" placeholder="Fecha de Venta" name="fecha-venta">
-                <label for="fecha-pago">Fecha de Pago</label>
-                <input type="date" id="fecha-pago" placeholder="Fecha de Pago" name="fecha-pago">
-                <label for="">Forma de Pago</label>
-                <section id="forma-pago">
-                    <label for="">Efectivo <input type="radio" name="forma-pago"></label>
-                    <label for="">Crédito <input type="radio" name="forma-pago"></label>
-                </section>
                 <button class="btn btn-verde">Agregar Venta</button>
             </form>
         </section>
@@ -63,14 +57,12 @@
                     <th></th>
                     <th>ID Venta</th>
                     <th>Cédula Comprador</th>
-                    <th>Nombre</th>
-                    <th>Cantidad</th>
-                    <th>Valor</th>
+                    <th>Productos</th>
+                    <th>Valor Total</th>
                     <th>Fecha de Venta</th>
-                    <th>Fecha de Pago</th>
-                    <th>Forma de Pago</th>
                     <th>ID Vendedor</th>
                     <th>Estado</th>
+                    <th></th>
                 </thead>
                 <tr>
                     <td><input type="checkbox" name="" id=""></td>
@@ -78,51 +70,17 @@
                     <td>Lorem</td>
                     <td>Lorem</td>
                     <td>Lorem</td>
-                    <td>$100000000</td>
-                    <td>25-04-1999</td>
-                    <td>25-04-1999</td>
-                    <td>Efectivo</td>
-                    <td>Lorem.</td>
-                    <td>Lorem</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="" id=""></td>
                     <td>Lorem</td>
                     <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>$100000000</td>
-                    <td>25-04-1999</td>
-                    <td>25-04-1999</td>
-                    <td>Efectivo</td>
-                    <td>Lorem.</td>
-                    <td>Lorem</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>$100000000</td>
-                    <td>25-04-1999</td>
-                    <td>25-04-1999</td>
-                    <td>Efectivo</td>
-                    <td>Lorem.</td>
-                    <td>Lorem</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>$100000000</td>
-                    <td>25-04-1999</td>
-                    <td>25-04-1999</td>
-                    <td>Efectivo</td>
-                    <td>Lorem.</td>
-                    <td>Lorem</td>
+                    <td>
+                        <select name="estado" class="combo-estado">
+                            <option value="0">Estado...</option>
+                            <option value="entregado">Entregado</option>
+                            <option value="en proceso">En proceso</option>
+                            <option value="cancelada">Cancelada</option>
+                        </select>
+                    </td>
+                    <td><a href="">Ver Detalles</a></td>
                 </tr>
             </table>
             <button class="btn btn-rojo">Eliminar Venta</button>
