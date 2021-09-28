@@ -20,6 +20,7 @@ body{
 
 input{
     outline: none;
+    border: none;
 }
 /*grid-area: nombre para identificar el area que ocupa un bloque en el espacio*/
 /*las grid-areas luego se organizan en el espacio usando la propiedad grid-templates-area*/
@@ -231,4 +232,23 @@ table{
     padding: 5px;
     border-radius: 5px;
     font-size: 14px;
+}
+
+.input-buscar{
+    width: 20%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0.5px solid rgb(0, 132, 255);
+    border-radius: 5px;
+}
+
+.input-buscar > input{
+    margin: 5px;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.fa-search{
+    font-size: 20px;
 }
