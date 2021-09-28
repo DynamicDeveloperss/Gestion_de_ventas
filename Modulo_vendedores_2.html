@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="/src/imgs_m_vendedores/casa.png">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="main.js"></script>
+    <script src="form.js"></script>
 
 </head>
 <body class="grid-container">
@@ -55,26 +56,28 @@
             </div>
                 <div>
                     <table class="tabla-ventas">
-                        <thead>
-                            <th><label for="numRecord">Nº</label></th>
-                            <th><label for="sailsId">ID</label></th>
-                            <th><label for="sailsName">Nombres</label></th>
-                            <th><label for="lastname">Apellidos</label></th>
-                            <th><label for="speciality">Especialidad</label></th>
-                            <th><label for="phone">Telefono</label></th>
-                            <th><label for="dateOfAdmision">Fecha de ingreso</label></th>
-                            <th></th>
-                        </thead>
-                        <tr>
-                            <td></td>
-                            <td><input id="sailsId" type="text" placeholder="ID" style="width: 80px;"></td>
-                            <td><input id="sailsName" type="text" placeholder="Nombres" style="width: 90px;"></td>
-                            <td><input id="lastname" type="text" placeholder="Apellidos" style="width: 90px;"></td>
-                            <td><input id="speciality" type="text" placeholder="Especialidad" style="width: 80px;"></td>
-                            <td><input id="phone" type="text" placeholder="Telefono" style="width: 80px;">.</td>
-                            <td><input id="dateOfAdmision" type="date" placeholder="Fecha" style="width: 100px;">.</td>
-                            <td><button class="addbutton" type="submit">Ingresar</button></td>
-                        </tr>
+                        <form id=formTable>
+                            <thead>
+                                <th><label for="numRecord">Nº</label></th>
+                                <th><label for="sailsId">ID</label></th>
+                                <th><label for="sailsName">Nombres</label></th>
+                                <th><label for="lastname">Apellidos</label></th>
+                                <th><label for="speciality">Especialidad</label></th>
+                                <th><label for="phone">Telefono</label></th>
+                                <th><label for="dateOfAdmision">Fecha de ingreso</label></th>
+                                <th></th>
+                            </thead>
+                            <tr>
+                                <td></td>
+                                <td><input id="sailsId" name="sailsId" type="text" placeholder="ID" style="width: 80px;"></td>
+                                <td><input id="sailsName" name="sailsName" type="text" placeholder="Nombres" style="width: 90px;"></td>
+                                <td><input id="lastname" name="lastname" type="text" placeholder="Apellidos" style="width: 90px;"></td>
+                                <td><input id="speciality" name="speciality" type="text" placeholder="Especialidad" style="width: 80px;"></td>
+                                <td><input id="phone" name="phone" type="text" placeholder="Telefono" style="width: 80px;">.</td>
+                                <td><input id="dateOfAdmision" name="dateOfAdmision" type="date" placeholder="Fecha" style="width: 100px;">.</td>
+                                <td><button class="addbutton" type="submit">Ingresar</button></td>
+                            </tr>
+                        </form>
                         <tr>
                             <td>1</td>
                             <td>1030456737</td>
