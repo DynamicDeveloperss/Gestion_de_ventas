@@ -69,3 +69,25 @@ table{
     width: 18px;
     height: 18px;
 }
+
+.trash-icon:hover {
+    opacity: 2;
+    transform: scale(1.1);
+}
+
+
+
+.addbutton {
+    border: 0px;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+    border-bottom: 2px solid black;
+}
+
+.addbutton:hover{
+    opacity: 0.8;
+    transform: scale(1.1);
+    cursor: pointer;
+}
