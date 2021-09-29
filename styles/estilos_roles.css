@@ -185,10 +185,6 @@ select:hover{
     transition: left 0.2s;
 }
 
-.submenu{
-    display: list-item;
-}
-
 .checkbox:checked ~ .menu {
     left: 20%;
     border-radius: 0 0.5rem 0.5rem 0;
@@ -245,7 +241,7 @@ li:hover {
     background-color: rgb(0, 132, 255);
 }
 .children {
-	display: none;
+	display:none;
 	background:whitesmoke;
 	position:absolute;
 	width: 91.4%;
