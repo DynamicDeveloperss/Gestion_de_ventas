@@ -16,28 +16,37 @@
 <body class="grid-container">
         <header class="header">
             <div class="nombre-logo">
-                
                 <input type="checkbox" class="checkbox" id=check>
-                <label class="menu" for="check">
-                <i class="fas fa-align-justify"></i>
-                </label>
+                    <label class="menu" for="check">
+                        <i class="fas fa-align-justify"></i>
+                    </label>
                 <div class="left-panel">
-                <div class="divimg">
-                <img src="/src/imgs_m_vendedores/profile2.png" class="img-centro" width="100" height="100">
+                    <div class="divimg">
+                        <img src="./src/imagenes_roles/profile2.png" class="img-centro">
+                        <br/>
+                        <h3 class="subtitulos"> Pepito Perez</h3>
+                        <br/>
+                        <h3 class="subtitulos">Admin</h3>
+                        </div>
+                    <div>
+                        <ul>
+                            <li><a href="">Perfil</a></li>
+                            <li><a href="">Inicio</a></li>
+                            <li class="submenu">
+                                <a href="#">Modulos</a>
+                            <ul>
+                                <select class="children">
+                                    <option><li><a href="#">Gestion de ventas</a></li></option> 
+						            <option><li><a href="#">Gestion de usuarios</a></li></option>
+                                    <option> <li><a href="#">Administracion de ventas</a></li></option>
+                                </select>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <br/>
-                Pepito Perez
-                <br/>
-                Administrador
-            </div>
-            <div>
-                <ul>
-                    <a href=""><li>Profile</li></a>
-                    <a href=""><li>Settings</li></a>
-                    <a href=""><li>Log out</li></a>
-                </ul>
-            </div>
-        </div>
-                <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" class="logo">
+            <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" class="logo">
                 <h1>Nombre App</h1>
             </div>
             <nav>
@@ -47,36 +56,36 @@
                 </ul>
             </nav>
         </header>
-    <main class="main">
-        <section  class="main-logo"> 
-            <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" class="logo-Grande">
-            <h1 class="titulo-principal">NEW ANDROID</h1>
-        </section>
-        <section>    
-        <form action="" class="forms">
-            <h3 class="subtitulos">REGISTRO USUARIOS</h3>
-            <br/>
-                <label for="apellidos">Apellidos </label>
-                <input type="text" name="apellidos" placeholder="Perez Perez" />
-                <label for="nombre">Nombres </label>
-                <input  type="text" name="nombre" placeholder="Pepito " />
-                <label for="email">Email</label>
-                <input type="email" placeholder="Email del empleado" required>                
-                <label for="cargo"> Cargo </label>
-                <input name="sueldo" placeholder="vendedor" type="text" />
-                <label for="sueldo"> Sueldo </label>
-                <input name="sueldo" placeholder="10000"  type="number"/>
-                <label for="turno">Turno</label>
-                <input name="turno" placeholder="Diurno" type="text" />
-                <label for="codigo">Identificacion </label>
-                <input name="identificacion" placeholder="1012345679" type="number"/>
-                <section>
+        <main class="main">
+            <section  class="main-logo"> 
+                <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" class="logo-Grande">
+                <h1 class="titulo-principal">NEW ANDROID</h1>
+            </section>
+            <section>    
+                <form action="" class="forms">
+                    <h3 class="subtitulos">REGISTRO USUARIOS</h3>
+                    <br/>
+                        <label for="apellidos">Apellidos </label>
+                        <input type="text" name="apellidos" placeholder="Perez Perez" />
+                        <label for="nombre">Nombres </label>
+                        <input  type="text" name="nombre" placeholder="Pepito " />
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Email del empleado" required>                
+                        <label for="cargo"> Cargo </label>
+                        <input name="sueldo" placeholder="vendedor" type="text" />
+                        <label for="sueldo"> Sueldo </label>
+                        <input name="sueldo" placeholder="10000"  type="number"/>
+                        <label for="turno">Turno</label>
+                        <input name="turno" placeholder="Diurno" type="text" />
+                        <label for="codigo">Identificacion </label>
+                        <input name="identificacion" placeholder="1012345679" type="number"/>
+                        <section>
                     <h3 class="subtitulos">Roles de usuario</h3>
-                <select name="roles" id="rol" class="roles">
-                    <option value="administrador">Administrador</option>
-                    <option value="vendedor">Vendedor</option>
-                    <option value="usuario">Usuario</option>
-                </select>  
+                        <select name="roles" id="rol" class="roles">
+                            <option value="administrador">Administrador</option>
+                            <option value="vendedor">Vendedor</option>
+                            <option value="usuario">Usuario</option>
+                        </select>  
 
                     <h3 class="subtitulos">Estado del Usuario</h3>
                     <select name="estado" id="rol" class="roles">
@@ -85,12 +94,12 @@
                         <option value="no autorizado">No Autorizado</option>
                     </select>  
                 </section>      
-            <br/>        
+                    <br/>        
                 <button type="submit" class="btn btn-verde">Enviar Datos</button>
                 <button type="reset" class="btn btn-verde" >Reiniciar</button>
             
-        </form>
-    </section>
+                </form>
+            </section>
     </main>  
     
 </body>

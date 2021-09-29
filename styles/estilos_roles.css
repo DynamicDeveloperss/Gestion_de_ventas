@@ -56,7 +56,8 @@ input{
 .logo{
     width: 60px;
     height: auto;
-    margin: 5px;
+    margin-left: 80px;
+    
 }
 .logo-Grande{
     width: 200px;
@@ -78,6 +79,9 @@ input{
 .nombre-logo{
     display: flex;
     align-items: center;
+    margin-left: 50px;
+    justify-content: space-evenly;
+    
 }
 
 .nombre-logo > i{
@@ -103,6 +107,7 @@ input{
     margin-bottom: 5px;
     text-align: left;
     font-size: 24px;
+    color: black;
 }
 /*Estilos de la seccion principal*/
 
@@ -167,6 +172,23 @@ select:hover{
     box-shadow: 3px 3px #B1E693;
 }
 
+/*Estilos del menu lateral*/
+
+.menu {
+    position: fixed;
+    top: 4%;
+    left: 1%;
+    bottom: 4%;
+    font-size: 1.9rem;
+    color: white;
+    text-align: center;
+    transition: left 0.2s;
+}
+
+.submenu{
+    display: list-item;
+}
+
 .checkbox:checked ~ .menu {
     left: 20%;
     border-radius: 0 0.5rem 0.5rem 0;
@@ -175,7 +197,7 @@ select:hover{
 .left-panel {
     width: 20%;
     height:100%;
-    background: whitesmoke;
+    background: rgb(233, 222, 222);
     position: absolute;
     top: 0px;
     left: -40%;
@@ -192,6 +214,51 @@ select:hover{
 
 .checkbox {
     display: none;
+    margin: 30px;
+}
+.divimg {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
+ul a  {
+    color: black;
+    text-decoration: none;
+}
 
+li {
+    list-style: none;
+    font-size: 1.0rem;
+    text-align: left;
+    padding: 1.5rem;
+    margin: 0rem ;
+    border-top: 1px solid gray;
+    border-top: 1px solid gray;
+
+}
+
+li:hover {
+    color: white;
+    border: 0px solid rgb(78, 78, 78);
+    background-color: rgb(0, 132, 255);
+}
+.children {
+	display: none;
+	background:whitesmoke;
+	position:absolute;
+	width: 91.4%;
+	z-index:100;
+    margin-top: 15px;
+}
+.children:checked{
+    display: list-item;
+}
+.img-centro {
+    margin: 10px auto 10px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    
+}
