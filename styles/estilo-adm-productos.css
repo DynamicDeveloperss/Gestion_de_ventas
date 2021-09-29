@@ -104,6 +104,16 @@ input{
     text-align: left;
     font-size: 24px;
 }
+
+textarea{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    margin-top: 5px;
+    resize: none;
+    
+
+}
+
 /*Estilos de la seccion principal*/
 
 .forms{
@@ -137,7 +147,7 @@ input{
 .btn{
     font-size: medium;
     margin-top: 20px;
-    margin-left: 5px;
+    margin-left: 15px;
     padding: 15px;
     width: 150px;
     border: none;
@@ -148,15 +158,13 @@ select{
     font-size: medium;
     margin-top: 20px;
     margin-left: 5px;
-    padding: 15px;
+    padding: 10px;
     width: 150px;
-    border: none;
     border-radius: 10px;
     cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
 }
-select:hover{
-    transform: scale(1.1);
-}
+
 
 .btn:hover{
     transform: scale(1.1);
@@ -167,3 +175,6 @@ select:hover{
     box-shadow: 3px 3px #B1E693;
 }
 
+#file{
+    display: none;
+}
