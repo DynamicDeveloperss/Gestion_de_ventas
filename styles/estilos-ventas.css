@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: medium;
+  min-height: 100%;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+/*grid-area: nombre para identificar el area que ocupa un bloque en el espacio*/
+/*las grid-areas luego se organizan en el espacio usando la propiedad grid-templates-area*/
+.header {
+  grid-area: header;
+  background-color: rgb(0, 132, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: 75px auto;
+  grid-template-areas: /*Esta propiedad permite distribuir las diferentes areas establecidas es el espacio*/
+    'header header header'
+    'main main main';
+}
+
+/*Estilos para el header/barra de nevegacion*/
+
+.logo {
+  width: 60px;
+  height: auto;
+  margin: 5px;
+}
+
+.nombre-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  justify-content: space-evenly;
+}
+
+.nombre-logo > i {
+  margin: 30px;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: right;
+}
+
+.nav-bar > li {
+  margin: 30px;
+  padding: 5px;
+}
+
+.fas {
+  font-size: 24px;
+}
+
+.subtitulos {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 24px;
+}
+/*Estilos de la seccion principal*/
+
+.forms {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px;
+}
+
+.forms > input {
+  width: 800px;
+  margin: 5px;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 17px;
+  border: 0.5px solid rgb(0, 132, 255);
+}
+
+.forms > input::placeholder {
+  font-size: 16px;
+}
+
+.forms > label {
+  margin-left: 5px;
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+#forma-pago {
+  margin: 5px;
+}
+
+#forma-pago > label {
+  font-weight: normal;
+  padding-right: 15px;
+}
+
+.btn {
+  font-size: medium;
+  margin-top: 20px;
+  margin-left: 5px;
+  padding: 15px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn-verde {
+  background-color: #6ecb63;
+  box-shadow: 3px 3px #b1e693;
+}
+
+.btn-rojo {
+  background-color: #ff0000;
+  box-shadow: 3px 3px #fe8f8f;
+}
+
+/*Estilos para la tabla donde se muestran los registros de venta*/
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 0.5px solid rgb(0, 132, 255);
+}
+
+.section-tabla {
+  height: fit-content;
+  margin: 10px;
+  padding: 5px;
+}
+
+.tabla-ventas thead th:nth-child(1) {
+  width: 1%;
+}
+
+.tabla-ventas thead th:nth-child(2) {
+  width: 10%;
+}
+
+.tabla-ventas thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tabla-ventas thead th:nth-child(4) {
+  width: 20%;
+}
+
+.tabla-ventas thead th:nth-child(5) {
+  width: 15%;
+}
+
+.tabla-ventas thead th:nth-child(6) {
+  width: 10%;
+}
+
+.tabla-ventas thead th:nth-child(7) {
+  width: 10%;
+}
+
+.tabla-ventas thead th:nth-child(8) {
+  width: 10%;
+}
+
+.tabla-ventas th,
+td {
+  padding: 20px;
+  text-align: center;
+}
+
+.tabla-ventas th {
+  background-color: white;
+}
+
+.tabla-ventas tr:nth-child(odd) {
+  background-color: whitesmoke;
+}
+.tabla-ventas tr:hover {
+  background-color: #d1d9d9;
+}
+
+.tabla-ventas thead {
+  border-bottom: 1px solid gray;
+}
+
+.combo-estado {
+  background-color: transparent;
+  width: 110px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.input-buscar {
+  width: 20%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0.5px solid rgb(0, 132, 255);
+  border-radius: 5px;
+}
+
+.input-buscar > input {
+  margin: 5px;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 17px;
+}
+
+.fa-search {
+  font-size: 20px;
+}
+
+/*Panel deslizante*/
+.menu {
+  position: fixed;
+  top: 4%;
+  left: 1%;
+  bottom: 4%;
+  font-size: 1.9rem;
+  color: white;
+  text-align: center;
+  transition: left 0.2s;
+}
+
+.checkbox:checked ~ .menu {
+  left: 20%;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.left-panel {
+  width: 20%;
+  height: 100%;
+  background: rgb(233, 222, 222);
+  position: absolute;
+  top: 0px;
+  left: -40%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.2s;
+}
+.checkbox:checked ~ .left-panel {
+  left: 0;
+}
+
+.checkbox {
+  display: none;
+  margin: 30px;
+}
+.divimg {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+ul a {
+  color: black;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  font-size: 1rem;
+  text-align: left;
+  padding: 1.5rem;
+  margin: 0rem;
+  border-top: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+li:hover {
+  color: white;
+  border: 0px solid rgb(78, 78, 78);
+  background-color: rgb(0, 132, 255);
+}
+.children {
+  display: none;
+  background: whitesmoke;
+  position: absolute;
+  width: 91.4%;
+  z-index: 100;
+  margin-top: 15px;
+}
+.children:checked {
+  display: list-item;
+}
+.img-centro {
+  margin: 10px auto 10px;
+  display: block;
+  width: 100px;
+  height: 100px;
+}
