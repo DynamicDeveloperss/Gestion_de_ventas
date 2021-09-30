@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: medium;
   min-height: 100%;
 }
@@ -50,8 +50,8 @@ input {
   grid-template-columns: 200px auto 200px;
   grid-template-rows: 75px auto;
   grid-template-areas: /*Esta propiedad permite distribuir las diferentes areas establecidas es el espacio*/
-    "header header header"
-    "main main main";
+    'header header header'
+    'main main main';
 }
 
 /*Estilos para el header/barra de nevegacion*/
@@ -185,7 +185,7 @@ table {
 }
 
 .tabla-ventas thead th:nth-child(4) {
-  width: 25%;
+  width: 20%;
 }
 
 .tabla-ventas thead th:nth-child(5) {
