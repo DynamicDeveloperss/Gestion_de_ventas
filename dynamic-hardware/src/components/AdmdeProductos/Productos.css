@@ -100,9 +100,11 @@ textarea{
     font-size: 17px;
     margin-top: 5px;
     resize: none;
+    width: 800px;
     
 
 }
+
 
 /*Estilos de la seccion principal*/
 
