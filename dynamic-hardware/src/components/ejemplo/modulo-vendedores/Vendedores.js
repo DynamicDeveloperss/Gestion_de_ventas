@@ -1,17 +1,18 @@
 import React from 'react'
 import './vendedores.css';
+import logo from './Icono.png'
 
 
 const Vendedores = () => {
     return (
         <div>
-            <main classNameName="main">
-            <section  classNameName="main-logo"> 
-                <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" classNameName="logo-Grande"/>
-                <h1 classNameName="titulo-principal">DYNAMIC HARDWARE</h1>
+            <main className="main">
+            <section  className="main-logo"> 
+                <img src={logo} alt="Logo" className="logo-Grande"/>
+                <h1 className="titulo-principal">DYNAMIC HARDWARE</h1>
             </section>
             <section>    
-                <form action="" classNameName="forms">
+                <form action="" className="forms">
                     <h3 className="subtitulos">REGISTRO DE VENDEDORES</h3>
                     <br/>
                         <label for="apellidos">Apellidos </label>
