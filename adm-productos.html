@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links para font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- Links para google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/estilo-adm-productos.css">
+    <title>Administacion de productos</title>
+</head>
+<body class="grid-container">
+    <main class="main">
+        <section  class="main-logo"> 
+            <img src="./src/Imagenes y diseño/Imagenes/Icono.png" alt="Logo" class="logo-Grande">
+            <h1 class="titulo-principal">NEW ANDROID</h1>
+        </section>
+        <section>    
+        <form action="" class="forms">
+            <h3 class="subtitulos">REGISTRO DE PRODUCTOS</h3>
+            <br/>
+                <label for="nombre_producto">Nombre Producto </label>
+                <input type="text" name="nombre_producto" placeholder="" />
+                <label for="id_producto">ID de Producto </label>
+                <input  type="text" name="id_producto" placeholder="" />
+                <label for="precio">Precio por Unidad</label>
+                <input type="email" name="precio" placeholder="" required>                
+                <label for="unidades">Numero de Unidades </label>
+                <input name="sueldo" name="unidades" placeholder="" type="text" />
+                <section>
+                    <h3 class="subtitulos">Estado del Producto</h3>
+                <select name="roles" id="rol" class="roles">
+                    <option value="disponible">Disponible</option>
+                    <option value="noDisponible">No Disponible</option>
+                </select>       
+            <br/>    
+            
+                <h3 class="subtitulos">Descripción</h3>
+                <textarea name="descripción" id="descripción" required cols="98" rows="10" placeholder="Escribe la descripción del producto..."></textarea>
+
+
+            <br>
+                <h3 class="subtitulos">Imagen del Producto</h3>
+                <input type="file" name="archivo" id="file">
+                <button type="submit" class="btn btn-verde" onclick="document.getElementById('file').click()">Subir Archivo</button>
+
+            <br>
+                <button type="submit" class="btn btn-verde">Enviar Datos</button>
+                <button type="reset" class="btn btn-verde" >Reiniciar</button>
+            
+        </form>
+    </section>
+    </main>  
+    
+</body>
+</html>
+
+
