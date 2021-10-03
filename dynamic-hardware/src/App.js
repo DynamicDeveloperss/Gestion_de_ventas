@@ -8,6 +8,11 @@ import Header from "./components/header/Header";
 function App() {
   return (
     <div> 
+      <Ventas/>
+      <Login/>
+      <Productos/>
+      <Roles/>
+      <Vendedores/>
     </div>
   );
 };
