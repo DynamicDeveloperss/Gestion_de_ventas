@@ -8,7 +8,7 @@ const Roles = () => {
         <main className="main">
             <section  className="main-logo"> 
                 <img src={logo} alt="Logo" className="logo-Grande"/>
-                <h1 className="titulo-principal">NEW ANDROID</h1>
+                <h1 className="titulo-principal">DYNAMIC HARDWARE</h1>
             </section>
             <section>    
                 <form action="" className="forms">

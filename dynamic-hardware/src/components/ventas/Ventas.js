@@ -1,13 +1,19 @@
-import Header from '../header/Header';
-import './ventas.css';
 
 import React from 'react';
+import Header from '../header/Header';
+import './ventas.css';
+import logo from './Icono.png';
+
 
 const Ventas = () => {
   return (
     <div>
       <Header />
       <main class="main">
+      <section  className="main-logo"> 
+                <img src={logo} alt="Logo" className="logo-Grande"/>
+                <h1 className="titulo-principal">DYNAMIC HARDWARE</h1>
+      </section>
         <section>
           <form action="" class="forms">
             <h3 class="subtitulos">Información del Comprador</h3>

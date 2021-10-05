@@ -9,7 +9,7 @@ export const Productos = () => {
                 <main className="main">
                     <section className="main-logo">
                         <img src= {logo} alt="Logo" className="logo-Grande"/>
-                        <h1 className ="titulo-principal">NEW ANDROID</h1>
+                        <h1 className ="titulo-principal">DYNAMIC HARDWARE</h1>
                     </section>
                     <section>
                         <form action="" className="forms">
@@ -22,7 +22,7 @@ export const Productos = () => {
                             <label for="precio">Precio por Unidad</label>
                             <input type="email" name="precio" placeholder="" required></input>
                                 <label for="unidades">Numero de Unidades </label>
-                                <input name="sueldo" name="unidades" placeholder="" type="text"></input>
+                                <input name="sueldo" name= "unidades" placeholder="" type="text"></input>
                                     <h3 className="subtitulos">Estado del Producto</h3>
                                     <select name="roles" id="rol" className="roles">
                                         <option value="disponible">Disponible</option>
