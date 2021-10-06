@@ -49,6 +49,7 @@ const Ventas = () => {
       nuevaVenta[key] = item;
     });
     console.log(nuevaVenta);
+    setDatos([...datos, nuevaVenta]);
   };
 
   return (
@@ -67,26 +68,26 @@ const Ventas = () => {
             <input type="email" placeholder="Correo Electrónico" name="correo" required />
             <input type="text" placeholder="Teléfono" name="telefono" required />
             <h3 class="subtitulos">Información de la Venta</h3>
-            <label for="id-vendedor">ID Vendedor</label>
+            <label for="id_vendedor">ID Vendedor</label>
             <input
               type="text"
               id="id-vendedor"
               placeholder="ID Vendedor"
-              name="id-vendedor"
+              name="id_vendedor"
               required
             />
             <label for="">ID Producto</label>
-            <input type="text" placeholder="ID Producto" name="id-producto" required />
+            <input type="text" placeholder="ID Producto" name="productos" required />
             <label for="">Cantidad</label>
             <input type="number" placeholder="Cantidad" name="cantidad" required />
             <label for="">Valor de la Venta</label>
             <input type="text" placeholder="Valor" name="valor" required />
-            <label for="fecha-venta">Fecha de Venta</label>
+            <label for="fecha_venta">Fecha de Venta</label>
             <input
               type="date"
               id="fecha-venta"
               placeholder="Fecha de Venta"
-              name="fecha-venta"
+              name="fecha_venta"
               required
             />
             <button class="btn btn-verde">Agregar Venta</button>
@@ -108,7 +109,7 @@ const Ventas = () => {
               <th>ID Vendedor</th>
               <th>Estado</th>
             </thead>
-            {datosIniciales.map((item, key) => {
+            {datos.map((item, key) => {
               return (
                 <tr>
                   <td>{item.id_vendedor}</td>
