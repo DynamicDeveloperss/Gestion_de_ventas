@@ -6,35 +6,35 @@ import logo from './Icono.png';
 const Ventas = () => {
   const datosIniciales = [
     {
-      id_vendedor: '123456',
+      id_venta: '123456',
       cedula: '123456',
       productos: 'Monitor 4k',
       valor: 1000000,
-      fecha_venta: '25/03/2021',
+      fecha_venta: '25-03-2021',
       id_vendedor: '12345678',
     },
     {
-      id_vendedor: '123456',
+      id_venta: '123456',
       cedula: '123456',
       productos: 'Monitor 4k',
       valor: 1000000,
-      fecha_venta: '25/03/2021',
+      fecha_venta: '25-03-2021',
       id_vendedor: '12345678',
     },
     {
-      id_vendedor: '123456',
+      id_venta: '123456',
       cedula: '123456',
       productos: 'Monitor 4k',
       valor: 1000000,
-      fecha_venta: '25/03/2021',
+      fecha_venta: '25-03-2021',
       id_vendedor: '12345678',
     },
     {
-      id_vendedor: '123456',
+      id_venta: '123456',
       cedula: '123456',
       productos: 'Monitor 4k',
       valor: 1000000,
-      fecha_venta: '25/03/2021',
+      fecha_venta: '25-03-2021',
       id_vendedor: '12345678',
     },
   ];
@@ -48,6 +48,7 @@ const Ventas = () => {
     fd.forEach((item, key) => {
       nuevaVenta[key] = item;
     });
+    nuevaVenta['id_venta'] = 1123314564;
     console.log(nuevaVenta);
     setDatos([...datos, nuevaVenta]);
   };
@@ -112,7 +113,7 @@ const Ventas = () => {
             {datos.map((item, key) => {
               return (
                 <tr>
-                  <td>{item.id_vendedor}</td>
+                  <td>{item.id_venta}</td>
                   <td>{item.cedula}</td>
                   <td>{item.productos}</td>
                   <td>{item.valor}</td>
