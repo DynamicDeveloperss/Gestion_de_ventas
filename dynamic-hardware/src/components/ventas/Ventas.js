@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Header from '../header/Header';
 import './ventas.css';
 import logo from './Icono.png';
+import { nanoid } from 'nanoid';
 
 const Ventas = () => {
   const datosIniciales = [
@@ -41,6 +42,13 @@ const Ventas = () => {
 
   const formVenta = useRef(null);
   const [datos, setDatos] = useState(datosIniciales);
+
+  /* Función para generar id aleatorio */
+  const { customAlphabet } = require('nanoid');
+  const alphabet = '0123456789';
+  const nanoid = customAlphabet(alphabet, 10);
+
+  // Función que captura los datos del formulario
   const enviarDatos = (e) => {
     e.preventDefault(); // Evita que el navegador refresque la página luego de un submit
     const fd = new FormData(formVenta.current); // Aqui se almacena la informacion del formulario
@@ -48,7 +56,7 @@ const Ventas = () => {
     fd.forEach((item, key) => {
       nuevaVenta[key] = item;
     });
-    nuevaVenta['id_venta'] = 1123314564;
+    nuevaVenta['id_venta'] = nanoid();
     console.log(nuevaVenta);
     setDatos([...datos, nuevaVenta]);
   };
@@ -95,7 +103,7 @@ const Ventas = () => {
           </form>
         </section>
         <section class="section-tabla">
-          <h3 class="subtitulos">Historico de Ventas</h3>
+          <h3 class="subtitulos">Historial de Ventas</h3>
           <div class="input-buscar">
             <input type="text" placeholder="Buscar" />
             <i class="fas fa-search"></i>
