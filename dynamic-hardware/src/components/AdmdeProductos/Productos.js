@@ -15,13 +15,13 @@ export const Productos = () => {
                         <form action="" className="forms">
                             <h3 className="subtitulos">REGISTRO DE PRODUCTOS</h3>
                             <br />
-                            <label for="nombre_producto">Nombre Producto </label>
+                            <label htmlFor="nombre_producto">Nombre Producto </label>
                             <input type="text" name="nombre_producto" placeholder="" ></input>
-                            <label for="id_producto">ID de Producto </label>
+                            <label htmlFor="id_producto">ID de Producto </label>
                             <input type="text" name="id_producto" placeholder=""></input>
-                            <label for="precio">Precio por Unidad</label>
+                            <label htmlFor="precio">Precio por Unidad</label>
                             <input type="email" name="precio" placeholder="" required></input>
-                                <label for="unidades">Numero de Unidades </label>
+                                <label htmlFor="unidades">Numero de Unidades </label>
                                 <input name="sueldo" name= "unidades" placeholder="" type="text"></input>
                                     <h3 className="subtitulos">Estado del Producto</h3>
                                     <select name="roles" id="rol" className="roles">
@@ -37,7 +37,7 @@ export const Productos = () => {
                                     <br/>
                                         <h3 className="subtitulos">Imagen del Producto</h3>
                                         <input type="file" name="archivo" id="file"></input>
-                                            <button type="submit" className="btn btn-verde" onclick="document.getElementById('file').click()">Subir Archivo</button>
+                                            <button type="submit" className="btn btn-verde">Subir Archivo</button>
 
                                             <br/>
                                                 <button type="submit" className="btn btn-verde">Enviar Datos</button>
