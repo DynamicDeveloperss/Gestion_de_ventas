@@ -1,7 +1,10 @@
 import React from 'react'
 import './vendedores.css';
 import logo from './Icono.png'
-
+import ScriptTag from 'react-script-tag';
+const Demo = props => (
+<ScriptTag type="text/javascript" src="./form.js" />
+)
 
 const Vendedores = () => {
     return (
@@ -12,24 +15,24 @@ const Vendedores = () => {
                 <h1 className="titulo-principal">DYNAMIC HARDWARE</h1>
             </section>
             <section>    
-                <form action="" className="forms">
+                <form id="formTable" action="" className="forms">
                     <h3 className="subtitulos">REGISTRO DE VENDEDORES</h3>
                     <br/>
-                        <label for="apellidos">Apellidos </label>
-                        <input type="text" name="apellidos" placeholder="Perez Perez" />
-                        <label for="nombre">Nombres </label>
-                        <input  type="text" name="nombre" placeholder="Pepito " />
-                        <label for="email">Especialidad</label>
-                        <input type="text" placeholder="Especialidad" required/>                
-                        <label for="telefono">Telefono</label>
-                        <input name="telefono"placeholder="Telefono" type="text" />
-                        <label for="fecha">Fecha de Ingreso</label>
-                        <input name="fecha" type="date"/>
-                        <label for="codigo">Identificacion </label>
-                        <input name="identificacion" placeholder="1012345679" type="number"/>     
+                        <label for="lastname">Apellidos </label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Perez Perez" />
+                        <label for="sailsName">Nombres </label>
+                        <input id="sailsName" type="text" name="sailsName" placeholder="Pepito " />
+                        <label for="speciality">Especialidad</label>
+                        <input id="speciality" type="text" name="speciality" placeholder="Especialidad" required/>                
+                        <label for="phone">Telefono</label>
+                        <input id="phone" name="phone"placeholder="Telefono" type="text" />
+                        <label for="dateOfAdmision">Fecha de Ingreso</label>
+                        <input id="dateOfAdmision" name="dateOfAdmision" type="date"/>
+                        <label for="sailsId">Identificacion </label>
+                        <input id="sailsId" name="sailsId" placeholder="ID" type="number"/>     
                     <br/>
                     <div className="table-container">
-                        <table className="tabla-ventas">
+                        <table id="recordTable" className="tabla-ventas">
                             <thead>
                                 <th>ID Vendedor</th>
                                 <th>Nombres</th>
@@ -81,9 +84,8 @@ const Vendedores = () => {
                     <button type="reset" className="btn btn-verde" >Eliminar</button>
                 </form>
             </section>
-    </main>
-            
-        </div>
+        </main>
+    </div>
     )
 }
 
