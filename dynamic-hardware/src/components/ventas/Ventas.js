@@ -3,16 +3,18 @@ import Header from '../header/Header';
 import './ventas.css';
 import logo from './Icono.png';
 import { nanoid } from 'nanoid';
+import { customAlphabet } from 'nanoid';
 
 const Ventas = () => {
   const datosIniciales = [
     {
       id_venta: '123456',
       cedula: '123456',
-      productos: 'Monitor 4k',
+      productos: 'Producto',
       valor: 1000000,
       fecha_venta: '25-03-2021',
       id_vendedor: '12345678',
+      estado: 'En proceso',
     },
     {
       id_venta: '123456',
@@ -21,6 +23,7 @@ const Ventas = () => {
       valor: 1000000,
       fecha_venta: '25-03-2021',
       id_vendedor: '12345678',
+      estado: 'En proceso',
     },
     {
       id_venta: '123456',
@@ -29,6 +32,7 @@ const Ventas = () => {
       valor: 1000000,
       fecha_venta: '25-03-2021',
       id_vendedor: '12345678',
+      estado: 'En proceso',
     },
     {
       id_venta: '123456',
@@ -37,14 +41,25 @@ const Ventas = () => {
       valor: 1000000,
       fecha_venta: '25-03-2021',
       id_vendedor: '12345678',
+      estado: 'En proceso',
+    },
+    {
+      id_venta: '123456',
+      cedula: '123456',
+      productos: 'Monitor 4k',
+      valor: 1000000,
+      fecha_venta: '25-03-2021',
+      id_vendedor: '12345678',
+      estado: 'Cancelada',
     },
   ];
 
   const formVenta = useRef(null);
   const [datos, setDatos] = useState(datosIniciales);
 
+  const [agregarPoducto, setAgregarProducto] = useState(false);
+
   /* Función para generar id aleatorio */
-  const { customAlphabet } = require('nanoid');
   const alphabet = '0123456789';
   const nanoid = customAlphabet(alphabet, 10);
 
@@ -128,11 +143,11 @@ const Ventas = () => {
                   <td>{item.fecha_venta}</td>
                   <td>{item.id_vendedor}</td>
                   <td>
-                    <select name="estado" class="combo-estado">
+                    <select name="estado" class="combo-estado" defaultValue={[`${item.estado}`]}>
                       <option value="0">Estado...</option>
-                      <option value="entregado">Entregado</option>
-                      <option value="en proceso">En proceso</option>
-                      <option value="cancelada">Cancelada</option>
+                      <option value="Entregado">Entregado</option>
+                      <option value="En proceso">En proceso</option>
+                      <option value="Cancelada">Cancelada</option>
                     </select>
                   </td>
                 </tr>
