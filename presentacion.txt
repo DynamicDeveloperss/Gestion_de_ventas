@@ -1,0 +1,13 @@
+nombre : Carolina Naranjo
+rol: Scrum Master
+grupo: Dynamic Developers
+
+nombre : Cindy Guzman
+rol: Analista
+grupo: Dynamic Developers
+
+Nombre: Giovanni Romaña Cuesta
+Equipo: Dynamic Developers
+Rol:Administrados BD
+
+
