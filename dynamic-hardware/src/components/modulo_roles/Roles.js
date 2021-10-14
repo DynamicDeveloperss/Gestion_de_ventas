@@ -1,52 +1,45 @@
-import React {useState,useEffect} from 'react';
-import {Component, useState, useEffect} from 'react';
+import React, {useState,} from 'react';
+import axios from 'axios';
 import './roles.css';
 import logo from './Icono.png';
 
 
   
 const Roles =() => {
-       /* constructor(props) {
-        super(props);
-        this.state = {roles: 'administrador'};
-        this.state = {estado : 'pendiente'}
+    const [datos, setDatos] = useState({
+        apellidos: '',
+        nombre: '',
+        email: '',
+        cargo: '',
+        sueldo: '',
+        turno: '',
+        identificacion: '',
+        roles: 'administrador',
+        estado: 'pendiente'
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = {
-            apellido: "",
-            nombre:"",
-            email:"",
-            cargo:"",
-            sueldo:"",
-            turno: "",
-            identificacion:"",
-        };
-        this.handleInputChange = this.handleInputChange.bind(this);
-        }
+    })
+    const handleInputChange = (event) => {
+        //console.log(event.target.name)
+        //console.log(event.target.value)
+        setDatos({
+            ...datos,
+            [event.target.name] : event.target.value
+        })
+    }
 
-        handleInputChange(event) {
-            this.setState({nombre: event.target.nombre});
-            this.setState({apellido: event.target.apellido});
-            this.setState({email: event.target.email});
-            this.setState({cargo: event.target.cargo});
-            this.setState({sueldo: event.target.suedo});
-            this.setState({turno: event.target.turno});
-            this.setState({identificacion:event.target.identificacion});
+    const enviarDatos = async (event) => {
+        event.preventDefault()
+        console.log('enviando datos...' + JSON.stringify(datos))
+        try {
+            await axios.post('http://localhost:5000/roles', datos);
+            alert ("informacion enviada");
+            
+        } catch (error) {
+            console.error("hubo un error" + error);
         }
+    }
 
-        handleChange(event) {
-            this.setState({roles: event.target.roles});
-            this.setState({estado: event.target.estado});
-        }
-        
-        handleSubmit(event) {
-            console.log(this.state);            
-            alert('SU ROL ES: ' + this.state.roles);
-            event.preventDefault();
-        }
-
-    render(){*/
+      
     return (
         <div className = "grid-container">
           <main className="main">
@@ -55,41 +48,41 @@ const Roles =() => {
                 <h1 className="titulo-principal">DYNAMIC HARDWARE</h1>
             </section>
             <section>    
-                <form action="" className="forms">
+                <form action="" className="forms" onSubmit={enviarDatos}>
                     <h3 className="subtitulos">REGISTRO USUARIOS</h3>
                     <br/>
                         <label htmlFor="apellidos">Apellidos </label>
-                        <input type="text" name="apellidos" placeholder="Perez Perez" value = { this.state.apellido} onChange={this.handleInputChange} />
+                        <input type="text" name="apellidos" placeholder="Perez Perez" required  onChange={handleInputChange}  />
                         <label htmlFor="nombre">Nombres </label>
-                        <input  type="text" name="nombre" placeholder="Pepito "value = { this.state.nombre} onChange={this.handleInputChange}/>
+                        <input  type="text" name="nombre" placeholder="Pepito " required  onChange={handleInputChange} />
                         <label htmlFor="email">Email</label>
-                        <input type="email" placeholder="Email del empleado" required value = { this.state.email} onChange={this.handleInputChange}/>                
+                        <input type="email" placeholder="Email del empleado" name="email" required   onChange={handleInputChange} />                
                         <label htmlFor="cargo"> Cargo </label>
-                        <input name="sueldo" placeholder="vendedor" type="text" value = { this.state.cargo} onChange={this.handleInputChange}/>
+                        <input name="cargo" placeholder="vendedor" type="text" required  onChange={handleInputChange} />
                         <label htmlFor="sueldo"> Sueldo </label>
-                        <input name="sueldo" placeholder="10000"  type="number" value = { this.state.sueldo} onChange={this.handleInputChange}/>
+                        <input name="sueldo" placeholder="10000"  type="number" required  onChange={handleInputChange} />
                         <label htmlFor="turno">Turno</label>
-                        <input name="turno" placeholder="Diurno" type="text" value = { this.state.turno} onChange={this.handleInputChange}/>
+                        <input name="turno" placeholder="Diurno" type="text"required   onChange={handleInputChange} />
                         <label htmlFor="codigo">Identificacion </label>
-                        <input name="identificacion" placeholder="1012345679" type="number" value = { this.state.identificacion} onChange={this.handleInputChange}/>
+                        <input name="identificacion" placeholder="1012345679" type="number" required  onChange={handleInputChange}  />
                         <section>
                     <h3 className="subtitulos">Roles de usuario</h3>
-                        <select name="roles" className="roles"value={this.state.roles} onChange={this.handleChange} >
+                        <select name="roles" className="roles"  required onChange={handleInputChange}>
                             <option value="administrador">Administrador</option>
                             <option value="vendedor">Vendedor</option>
                             <option value="usuario">Usuario</option>
                         </select>  
 
                     <h3 className="subtitulos">Estado del Usuario</h3>
-                    <select name="estado"  className="roles" value={this.state.estado} onChange={this.handleChange}>
-                        <option value="Pendiente">Pendiente</option>
+                    <select name="estado"  className="roles" required onChange={handleInputChange} >
+                        <option value="pendiente">Pendiente</option>
                         <option value="autorizado">Autorizado</option>
                         <option value="no autorizado">No Autorizado</option>
                     </select>  
             </section>      
                     <br/>        
-                    <button type="submit" className="btn btn-verde" onSubmit={this.handleSubmit}>Enviar Datos</button>
-                    <button type="reset" className="btn btn-verde" onSubmit={this.handleSubmit}>Reiniciar</button>
+                    <button type="submit" className="btn btn-verde" >Enviar Datos</button>
+                    <button type="reset" className="btn btn-verde" >Reiniciar</button>
             
                     </form>
             </section>
@@ -97,7 +90,7 @@ const Roles =() => {
         </div>
     );
 }
-}
+
 
 
 export default Roles;
