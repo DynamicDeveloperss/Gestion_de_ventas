@@ -16,11 +16,13 @@ const Vendedores = () => {
       e.preventDefault(); // Evita que el navegador refresque la página luego de un submit
       const fd = new FormData(formVenta.current); // Aqui se almacena la informacion del formulario
       const nuevaVenta = {};
+      e.target.reset();
       fd.forEach((item, key) => {
         nuevaVenta[key] = item;
       });
       console.log(nuevaVenta);
       setDatos([...datos, nuevaVenta]);
+
     };
 
     return (
@@ -35,17 +37,17 @@ const Vendedores = () => {
                     <h3 className="subtitulos">REGISTRO DE VENDEDORES</h3>
                     <br/>
                         <label for="lastname">Apellidos </label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Perez Perez" />
+                        <input id="lastname" type="text" name="lastname" placeholder="Apellido" required/>
                         <label for="sailsName">Nombres </label>
-                        <input id="sailsName" type="text" name="sailsName" placeholder="Pepito " />
+                        <input id="sailsName" type="text" name="sailsName" placeholder="Nombre" required/>
                         <label for="speciality">Especialidad</label>
                         <input id="speciality" type="text" name="speciality" placeholder="Especialidad" required/>                
                         <label for="phone">Telefono</label>
-                        <input id="phone" name="phone"placeholder="Telefono" type="text" />
+                        <input id="phone" name="phone"placeholder="Telefono" type="text" required/>
                         <label for="dateOfAdmision">Fecha de Ingreso</label>
-                        <input id="dateOfAdmision" name="dateOfAdmision" type="date"/>
+                        <input id="dateOfAdmision" name="dateOfAdmision" type="date" required/>
                         <label for="sailsId">Identificacion </label>
-                        <input id="sailsId" name="sailsId" placeholder="ID" type="number"/>     
+                        <input id="sailsId" name="sailsId" placeholder="ID" type="number" required/>     
                     <br/>
                     <div className="table-container">
                         <table id="recordTable" className="tabla-ventas">
