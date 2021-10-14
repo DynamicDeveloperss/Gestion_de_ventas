@@ -1,12 +1,28 @@
-import React from 'react'
+import React, {useRef, useState} from 'react'
 import './vendedores.css';
 import logo from './Icono.png'
-import ScriptTag from 'react-script-tag';
-const Demo = props => (
-<ScriptTag type="text/javascript" src="./form.js" />
-)
 
 const Vendedores = () => {
+    const datosIniciales = [
+    ];
+
+    const formVenta = useRef(null);
+    const [datos, setDatos] = useState(datosIniciales);
+  
+    //const [agregarPoducto, setAgregarProducto] = useState(false);
+  
+    // Función que captura los datos del formulario
+    const enviarDatos = (e) => {
+      e.preventDefault(); // Evita que el navegador refresque la página luego de un submit
+      const fd = new FormData(formVenta.current); // Aqui se almacena la informacion del formulario
+      const nuevaVenta = {};
+      fd.forEach((item, key) => {
+        nuevaVenta[key] = item;
+      });
+      console.log(nuevaVenta);
+      setDatos([...datos, nuevaVenta]);
+    };
+
     return (
         <div>
             <main className="main">
@@ -15,7 +31,7 @@ const Vendedores = () => {
                 <h1 className="titulo-principal">DYNAMIC HARDWARE</h1>
             </section>
             <section>    
-                <form id="formTable" action="" className="forms">
+                <form ref={formVenta} onSubmit={enviarDatos} id="formTable" action="" className="forms">
                     <h3 className="subtitulos">REGISTRO DE VENDEDORES</h3>
                     <br/>
                         <label for="lastname">Apellidos </label>
@@ -41,41 +57,19 @@ const Vendedores = () => {
                                 <th>Telefono</th>
                                 <th>Fecha de Ingreso</th>
                             </thead>
-                            <tr>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>$100000000</td>
-                                <td>Lorem</td>
-                                <td>24-05-2021</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-        
-                            </tr>
-                            <tr>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                             
-                            </tr>
-                            <tr>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                <td>Lorem</td>
-                                
-                            </tr>
+                            {datos.map((item, key) => {
+                                return (
+                                    <tr>
+                                        <td>{item.sailsId}</td>
+                                        <td>{item.sailsName}</td>
+                                        <td>{item.lastname}</td>
+                                        <td>{item.speciality}</td>
+                                        <td>{item.phone}</td>
+                                        <td>{item.dateOfAdmision}</td>
+                                    </tr>
+
+                                );
+                            })}
                         </table>
                     </div>
                     
@@ -86,6 +80,7 @@ const Vendedores = () => {
             </section>
         </main>
     </div>
+    
     )
 }
 
