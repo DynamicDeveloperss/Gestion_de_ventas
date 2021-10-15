@@ -106,7 +106,7 @@ table {
 }
 
 .tabla-ventas thead th:nth-child(3) {
-  width: 25%;
+  width: 20%;
 }
 
 .tabla-ventas thead th:nth-child(4) {
@@ -121,14 +121,6 @@ table {
   width: 10%;
 }
 
-.tabla-ventas thead th:nth-child(7) {
-  width: 10%;
-}
-
-.tabla-ventas thead th:nth-child(8) {
-  width: 10%;
-}
-
 .tabla-ventas th,
 td {
   padding: 20px;
@@ -139,8 +131,8 @@ td {
   background-color: white;
 }
 
-.tabla-ventas tr:nth-child(odd) {
-  background-color: whitesmoke;
+.tabla-ventas tbody:nth-child(odd) {
+  background-color: #f2f2f2;
 }
 .tabla-ventas tr:hover {
   background-color: #d1d9d9;

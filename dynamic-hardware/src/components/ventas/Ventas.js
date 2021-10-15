@@ -1,67 +1,34 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Header from '../header/Header';
 import './ventas.css';
 import logo from './Icono.png';
-import { nanoid } from 'nanoid';
 import { customAlphabet } from 'nanoid';
+import axios from 'axios';
 
 const Ventas = () => {
-  const datosIniciales = [
-    {
-      id_venta: '123456',
-      cedula: '123456',
-      productos: 'Producto',
-      valor: 1000000,
-      fecha_venta: '25-03-2021',
-      id_vendedor: '12345678',
-      estado: 'En proceso',
-    },
-    {
-      id_venta: '123456',
-      cedula: '123456',
-      productos: 'Monitor 4k',
-      valor: 1000000,
-      fecha_venta: '25-03-2021',
-      id_vendedor: '12345678',
-      estado: 'En proceso',
-    },
-    {
-      id_venta: '123456',
-      cedula: '123456',
-      productos: 'Monitor 4k',
-      valor: 1000000,
-      fecha_venta: '25-03-2021',
-      id_vendedor: '12345678',
-      estado: 'En proceso',
-    },
-    {
-      id_venta: '123456',
-      cedula: '123456',
-      productos: 'Monitor 4k',
-      valor: 1000000,
-      fecha_venta: '25-03-2021',
-      id_vendedor: '12345678',
-      estado: 'En proceso',
-    },
-    {
-      id_venta: '123456',
-      cedula: '123456',
-      productos: 'Monitor 4k',
-      valor: 1000000,
-      fecha_venta: '25-03-2021',
-      id_vendedor: '12345678',
-      estado: 'Cancelada',
-    },
-  ];
-
-  const formVenta = useRef(null);
-  const [datos, setDatos] = useState(datosIniciales);
-
-  const [agregarPoducto, setAgregarProducto] = useState(false);
-
   /* Función para generar id aleatorio */
   const alphabet = '0123456789';
   const nanoid = customAlphabet(alphabet, 10);
+
+  const formVenta = useRef(null);
+  const [datos, setDatos] = useState([]);
+
+  // Cargar datos iniciales de la base de datos
+  useEffect(() => {
+    obtenerVentas();
+  }, []);
+
+  const obtenerVentas = () => {
+    const options = { method: 'GET', url: 'http://localhost:5000/obtenerVentas' };
+    axios
+      .request(options)
+      .then(function (response) {
+        setDatos(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
 
   // Función que captura los datos del formulario
   const enviarDatos = (e) => {
@@ -72,27 +39,47 @@ const Ventas = () => {
       nuevaVenta[key] = item;
     });
     nuevaVenta['id_venta'] = nanoid();
-    console.log(nuevaVenta);
-    setDatos([...datos, nuevaVenta]);
+
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:5000/agregarVenta',
+      headers: { 'Content-Type': 'application/json' },
+      data: {
+        id_venta: nuevaVenta.id_venta,
+        cedula: nuevaVenta.cedula,
+        productos: nuevaVenta.productos,
+        valor: nuevaVenta.valor,
+        id_vendedor: nuevaVenta.id_vendedor,
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        obtenerVentas();
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   };
 
   return (
     <div>
       <Header />
-      <main class="main">
+      <main className="main">
         <section className="main-logo">
           <img src={logo} alt="Logo" className="logo-Grande" />
           <h1 className="titulo-principal">DYNAMIC HARDWARE</h1>
         </section>
         <section>
-          <form ref={formVenta} onSubmit={enviarDatos} class="forms">
-            <h3 class="subtitulos">Información del Comprador</h3>
+          <form ref={formVenta} onSubmit={enviarDatos} className="forms">
+            <h3 className="subtitulos">Información del Comprador</h3>
             <input type="text" placeholder="Nombre" name="nombre" required />
             <input type="text" placeholder="Cédula" name="cedula" required />
             <input type="email" placeholder="Correo Electrónico" name="correo" required />
             <input type="text" placeholder="Teléfono" name="telefono" required />
-            <h3 class="subtitulos">Información de la Venta</h3>
-            <label for="id_vendedor">ID Vendedor</label>
+            <h3 className="subtitulos">Información de la Venta</h3>
+            <label htmlFor="id_vendedor">ID Vendedor</label>
             <input
               type="text"
               id="id-vendedor"
@@ -100,59 +87,46 @@ const Ventas = () => {
               name="id_vendedor"
               required
             />
-            <label for="">ID Producto</label>
+            <label htmlFor="">ID Producto</label>
             <input type="text" placeholder="ID Producto" name="productos" required />
-            <label for="">Cantidad</label>
+            <label htmlFor="">Cantidad</label>
             <input type="number" placeholder="Cantidad" name="cantidad" required />
-            <label for="">Valor de la Venta</label>
+            <label htmlFor="">Valor de la Venta</label>
             <input type="text" placeholder="Valor" name="valor" required />
-            <label for="fecha_venta">Fecha de Venta</label>
-            <input
-              type="date"
-              id="fecha-venta"
-              placeholder="Fecha de Venta"
-              name="fecha_venta"
-              required
-            />
-            <button class="btn btn-verde">Agregar Venta</button>
+            <button className="btn btn-verde">Agregar Venta</button>
           </form>
         </section>
-        <section class="section-tabla">
-          <h3 class="subtitulos">Historial de Ventas</h3>
-          <div class="input-buscar">
+        <section className="section-tabla">
+          <h3 className="subtitulos">Historial de Ventas</h3>
+          <div className="input-buscar">
             <input type="text" placeholder="Buscar" />
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
           </div>
-          <table class="tabla-ventas">
+          <table className="tabla-ventas">
             <thead>
-              <th>ID Venta</th>
-              <th>Cédula Comprador</th>
-              <th>Productos</th>
-              <th>Valor Total</th>
-              <th>Fecha de Venta</th>
-              <th>ID Vendedor</th>
-              <th>Estado</th>
+              <tr>
+                <th>ID Venta</th>
+                <th>Cédula Comprador</th>
+                <th>Productos</th>
+                <th>Valor Total</th>
+                <th>Fecha de Venta</th>
+                <th>ID Vendedor</th>
+              </tr>
             </thead>
-            {datos.map((item, key) => {
-              return (
-                <tr>
-                  <td>{item.id_venta}</td>
-                  <td>{item.cedula}</td>
-                  <td>{item.productos}</td>
-                  <td>{item.valor}</td>
-                  <td>{item.fecha_venta}</td>
-                  <td>{item.id_vendedor}</td>
-                  <td>
-                    <select name="estado" class="combo-estado" defaultValue={[`${item.estado}`]}>
-                      <option value="0">Estado...</option>
-                      <option value="Entregado">Entregado</option>
-                      <option value="En proceso">En proceso</option>
-                      <option value="Cancelada">Cancelada</option>
-                    </select>
-                  </td>
-                </tr>
-              );
-            })}
+            <tbody>
+              {datos.map((item, key) => {
+                return (
+                  <tr key={item.id}>
+                    <td>{item.id}</td>
+                    <td>{item.cedula_comprador}</td>
+                    <td>{item.id_producto}</td>
+                    <td>{item.valor}</td>
+                    <td>{item.fecha}</td>
+                    <td>{item.id_vendedor}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </section>
       </main>
