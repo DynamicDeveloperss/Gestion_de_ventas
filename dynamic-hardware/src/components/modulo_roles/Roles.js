@@ -7,12 +7,10 @@ import logo from './Icono.png';
   
 const Roles =() => {
     const [datos, setDatos] = useState({
-        apellidos: '',
+        apellido: '',
         nombre: '',
-        email: '',
+        correo: '',
         cargo: '',
-        sueldo: '',
-        turno: '',
         identificacion: '',
         roles: 'administrador',
         estado: 'pendiente'
@@ -31,7 +29,7 @@ const Roles =() => {
         event.preventDefault()
         console.log('enviando datos...' + JSON.stringify(datos))
         try {
-            await axios.post('http://localhost:5000/roles', datos);
+            await axios.post('http://localhost:5000/agregaRoles', datos);
             alert ("informacion enviada");
             
         } catch (error) {
@@ -52,17 +50,13 @@ const Roles =() => {
                     <h3 className="subtitulos">REGISTRO USUARIOS</h3>
                     <br/>
                         <label htmlFor="apellidos">Apellidos </label>
-                        <input type="text" name="apellidos" placeholder="Perez Perez" required  onChange={handleInputChange}  />
+                        <input type="text" name="apellido" placeholder="Perez Perez" required  onChange={handleInputChange}  />
                         <label htmlFor="nombre">Nombres </label>
                         <input  type="text" name="nombre" placeholder="Pepito " required  onChange={handleInputChange} />
-                        <label htmlFor="email">Email</label>
-                        <input type="email" placeholder="Email del empleado" name="email" required   onChange={handleInputChange} />                
+                        <label htmlFor="correo">Email</label>
+                        <input type="email" placeholder="Email del empleado" name="correo" required   onChange={handleInputChange} />                
                         <label htmlFor="cargo"> Cargo </label>
                         <input name="cargo" placeholder="vendedor" type="text" required  onChange={handleInputChange} />
-                        <label htmlFor="sueldo"> Sueldo </label>
-                        <input name="sueldo" placeholder="10000"  type="number" required  onChange={handleInputChange} />
-                        <label htmlFor="turno">Turno</label>
-                        <input name="turno" placeholder="Diurno" type="text"required   onChange={handleInputChange} />
                         <label htmlFor="codigo">Identificacion </label>
                         <input name="identificacion" placeholder="1012345679" type="number" required  onChange={handleInputChange}  />
                         <section>
