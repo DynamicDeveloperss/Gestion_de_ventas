@@ -4,8 +4,7 @@ import Login from "./components/login/Login";
 import { Productos } from "./components/AdmdeProductos/Productos";
 import Roles from './components/modulo_roles/Roles';
 import Ventas from './components/ventas/Ventas';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import{BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 function App() {
@@ -13,10 +12,10 @@ function App() {
     <div>
     <Router>
       <Switch>
-        <Route path= '/login'>
+        <Route path = '/login'>
           <Login/>
         </Route>
-        <Route path= '/vendedores'>
+        <Route path = '/vendedores'>
           <Vendedores/>
         </Route>
         <Route path= '/roles'>
@@ -28,7 +27,7 @@ function App() {
         <Route path= '/ventas'>
           <Ventas/>
         </Route>
-      </Switch>
+    </Switch>
     </Router>
     </div>
   );
