@@ -12,7 +12,10 @@ ul {
   align-items: center;
   color: white;
 }
-
+.contenedor_sidebar{
+  display: flex;
+  flex-direction: row;
+}
 .logo {
   width: 60px;
   height: auto;
@@ -21,8 +24,9 @@ ul {
 
 .nombre-logo {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 100px;
   justify-content: space-evenly;
 }
 

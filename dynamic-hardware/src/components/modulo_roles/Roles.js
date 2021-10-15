@@ -1,10 +1,12 @@
 import React from 'react';
 import './roles.css';
 import logo from './Icono.png';
+import Header from '../header/Header';
 
 const Roles = () => {
     return (
-        <body className = "grid-container">
+        <div className = "grid-container">
+        <Header/>
         <main className="main">
             <section  className="main-logo"> 
                 <img src={logo} alt="Logo" className="logo-Grande"/>
@@ -50,7 +52,7 @@ const Roles = () => {
                     </form>
             </section>
         </main> 
-        </body> 
+        </div> 
     
     );
 };

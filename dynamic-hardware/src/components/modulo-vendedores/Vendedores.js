@@ -1,11 +1,13 @@
 import React from 'react'
 import './vendedores.css';
 import logo from './Icono.png'
+import Header from '../header/Header';
 
 
 const Vendedores = () => {
     return (
-        <div>
+        <div className = "grid-container">
+            <Header/>
             <main className="main">
             <section  className="main-logo"> 
                 <img src={logo} alt="Logo" className="logo-Grande"/>
