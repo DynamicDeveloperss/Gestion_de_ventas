@@ -23,7 +23,7 @@ const Header = () => {
           </li>
           <li>
           <Link to= "/vendedores">
-              <i class="fas fa-user-circle"></i>
+              <button type="button" className="btn-navbar">Cerrar sesion</button>
               </Link>
               </li>
         </ul>
