@@ -25,17 +25,17 @@ const Vendedores = () => {
 
     };
 
-    const enviarDatos = async (event) => {
-        event.preventDefault()
-        console.log('enviando datos...' + JSON.stringify(datos))
-        try {
-            await axios.post('http://localhost:5000/agregaRoles', datos);
-            alert ("informacion enviada");
+    // const enviarDatos = async (event) => {
+    //     event.preventDefault()
+    //     console.log('enviando datos...' + JSON.stringify(datos))
+    //     try {
+    //         await axios.post('http://localhost:5000/agregaRoles', datos);
+    //         alert ("informacion enviada");
             
-        } catch (error) {
-            console.error("hubo un error" + error);
-        }
-    }
+    //     } catch (error) {
+    //         console.error("hubo un error" + error);
+    //     }
+    // }
 
     return (
         <div>
