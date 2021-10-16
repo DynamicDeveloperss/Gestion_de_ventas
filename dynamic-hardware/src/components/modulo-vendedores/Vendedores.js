@@ -25,6 +25,18 @@ const Vendedores = () => {
 
     };
 
+    const enviarDatos = async (event) => {
+        event.preventDefault()
+        console.log('enviando datos...' + JSON.stringify(datos))
+        try {
+            await axios.post('http://localhost:5000/agregaRoles', datos);
+            alert ("informacion enviada");
+            
+        } catch (error) {
+            console.error("hubo un error" + error);
+        }
+    }
+
     return (
         <div>
             <main className="main">
@@ -39,9 +51,7 @@ const Vendedores = () => {
                         <label for="lastname">Apellidos </label>
                         <input id="lastname" type="text" name="lastname" placeholder="Apellido" required/>
                         <label for="sailsName">Nombres </label>
-                        <input id="sailsName" type="text" name="sailsName" placeholder="Nombre" required/>
-                        <label for="speciality">Especialidad</label>
-                        <input id="speciality" type="text" name="speciality" placeholder="Especialidad" required/>                
+                        <input id="sailsName" type="text" name="sailsName" placeholder="Nombre" required/>                
                         <label for="phone">Telefono</label>
                         <input id="phone" name="phone"placeholder="Telefono" type="text" required/>
                         <label for="dateOfAdmision">Fecha de Ingreso</label>
@@ -55,7 +65,7 @@ const Vendedores = () => {
                                 <th>ID Vendedor</th>
                                 <th>Nombres</th>
                                 <th>Apellidos</th>
-                                <th>Especialidad</th>
+                    
                                 <th>Telefono</th>
                                 <th>Fecha de Ingreso</th>
                             </thead>
@@ -65,11 +75,10 @@ const Vendedores = () => {
                                         <td>{item.sailsId}</td>
                                         <td>{item.sailsName}</td>
                                         <td>{item.lastname}</td>
-                                        <td>{item.speciality}</td>
+
                                         <td>{item.phone}</td>
                                         <td>{item.dateOfAdmision}</td>
                                     </tr>
-
                                 );
                             })}
                         </table>
