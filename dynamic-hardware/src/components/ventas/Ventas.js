@@ -18,9 +18,9 @@ const Ventas = () => {
     obtenerVentas();
   }, []);
 
-  const obtenerVentas = () => {
+  const obtenerVentas = async () => {
     const options = { method: 'GET', url: 'http://localhost:5000/obtenerVentas' };
-    axios
+    await axios
       .request(options)
       .then(function (response) {
         setDatos(response.data);
@@ -31,7 +31,7 @@ const Ventas = () => {
   };
 
   // Función que captura los datos del formulario
-  const enviarDatos = (e) => {
+  const enviarDatos = async (e) => {
     e.preventDefault(); // Evita que el navegador refresque la página luego de un submit
     const fd = new FormData(formVenta.current); // Aqui se almacena la informacion del formulario
     const nuevaVenta = {};
@@ -39,6 +39,7 @@ const Ventas = () => {
       nuevaVenta[key] = item;
     });
     nuevaVenta['id_venta'] = nanoid();
+    console.log(nuevaVenta);
 
     const options = {
       method: 'POST',
@@ -53,7 +54,7 @@ const Ventas = () => {
       },
     };
 
-    axios
+    await axios
       .request(options)
       .then(function (response) {
         obtenerVentas();
@@ -120,7 +121,7 @@ const Ventas = () => {
                     <td>{item.id}</td>
                     <td>{item.cedula_comprador}</td>
                     <td>{item.id_producto}</td>
-                    <td>{item.valor}</td>
+                    <td>${item.valor}</td>
                     <td>{item.fecha}</td>
                     <td>{item.id_vendedor}</td>
                   </tr>
