@@ -12,6 +12,8 @@ const Ventas = () => {
 
   const formVenta = useRef(null);
   const [datos, setDatos] = useState([]);
+  const [keyword, setKeyword] = useState('');
+  const [filtro, setFiltro] = useState([]);
 
   // Cargar datos iniciales de la base de datos
   useEffect(() => {
@@ -24,6 +26,7 @@ const Ventas = () => {
       .request(options)
       .then(function (response) {
         setDatos(response.data);
+        setFiltro(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -64,6 +67,19 @@ const Ventas = () => {
       });
   };
 
+  const changeInput = (e) => {
+    console.log(e.target.value);
+    setKeyword(e.target.value);
+  };
+
+  useEffect(() => {
+    setFiltro(
+      datos.filter((elemento) => {
+        return JSON.stringify(elemento).toLowerCase().includes(keyword.toLowerCase());
+      })
+    );
+  }, [keyword]);
+
   return (
     <div>
       <Header />
@@ -100,7 +116,7 @@ const Ventas = () => {
         <section className="section-tabla">
           <h3 className="subtitulos">Historial de Ventas</h3>
           <div className="input-buscar">
-            <input type="text" placeholder="Buscar" />
+            <input type="text" placeholder="Buscar" value={keyword} onChange={changeInput} />
             <i className="fas fa-search"></i>
           </div>
           <table className="tabla-ventas">
@@ -115,7 +131,7 @@ const Ventas = () => {
               </tr>
             </thead>
             <tbody>
-              {datos.map((item, key) => {
+              {filtro.map((item, key) => {
                 return (
                   <tr key={item.id}>
                     <td>{item.id}</td>
