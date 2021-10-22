@@ -15,7 +15,7 @@ const Header = () => {
       </div>
       </div>
       <nav>
-        <ul class="nav-bar">
+        <ul className="nav-bar">
           <li>
               <Link to= "/home">
               <i class="fas fa-home"></i>
