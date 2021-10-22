@@ -17,12 +17,12 @@ const Header = () => {
       <nav>
         <ul class="nav-bar">
           <li>
-              <Link to= "/login">
+              <Link to= "/home">
               <i class="fas fa-home"></i>
               </Link>
           </li>
           <li>
-          <Link to= "/vendedores">
+          <Link to= "/login">
               <button type="button" className="btn-navbar">Cerrar sesion</button>
               </Link>
               </li>
