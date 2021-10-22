@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Vendedores from "./components/modulo-vendedores/Vendedores";
 import Login from "./components/login/Login";
@@ -35,9 +34,11 @@ function App() {
     </Switch>
     </Router>
 
+
     </div>
   );
 };
 
 
 export default App;
+
