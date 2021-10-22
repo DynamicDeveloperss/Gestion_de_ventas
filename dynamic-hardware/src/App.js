@@ -4,13 +4,15 @@ import { Productos } from "./components/AdmdeProductos/Productos";
 
 import Ventas from './components/ventas/Ventas';
 import Header from "./components/header/Header";*/
-import Roles from './components/modulo_roles/Roles';
+//import Roles from './components/modulo_roles/Roles';
+import Productos from './components/AdmdeProductos/Productos';
 
 function App() {
   return (
     <div> 
       
-      <Roles/>
+      
+      <Productos/>
     
     </div>
   );
