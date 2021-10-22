@@ -3,10 +3,12 @@ import './Login.css'
 import logo from './Icono.png'
 import computador from './Foto Login.jpg'
 
+
 const Login = () => {
     return (
         <div>
             <body>
+                
                 <div className="contenedor">
                     <div className="login-img">
                         <img src={computador} />

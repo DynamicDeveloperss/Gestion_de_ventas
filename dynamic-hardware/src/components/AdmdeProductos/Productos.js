@@ -1,10 +1,12 @@
 import React from 'react'
 import './Productos.css'
 import logo from './Icono.png'
+import Header from '../header/Header';
 
 export const Productos = () => {
     return (
         <div>
+            <Header/>
             <body className="grid-container">
                 <main className="main">
                     <section className="main-logo">

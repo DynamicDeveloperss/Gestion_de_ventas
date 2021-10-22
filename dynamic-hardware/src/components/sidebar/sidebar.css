@@ -1,0 +1,21 @@
+.sidebar{
+    margin-bottom: 10px;
+    width: 50px;
+    position: absolute;
+    top: 3%;
+    left: 1%;
+    bottom: 3%;   
+    color: white;
+    text-align: center;
+  
+    
+
+}
+.lista{
+    border: medium;
+    width: 250px;
+    background-color:  rgb(123, 157, 190);
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 5px;
+}
