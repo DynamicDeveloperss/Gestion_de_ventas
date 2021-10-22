@@ -5,17 +5,17 @@ const Header = () => {
   return (
     <header className="header">
       <div className="nombre-logo">
-        <i class="fas fa-align-justify"></i>
+        <i className="fas fa-align-justify"></i>
         <img src={logo} alt="Logo" className="logo" />
         <h1>Dynamic Hardware</h1>
       </div>
       <nav>
-        <ul class="nav-bar">
+        <ul className="nav-bar">
           <li>
-            <i class="fas fa-home"></i>
+            <i className="fas fa-home"></i>
           </li>
           <li>
-            <i class="fas fa-user-circle"></i>
+            <i className="fas fa-user-circle"></i>
           </li>
         </ul>
       </nav>
