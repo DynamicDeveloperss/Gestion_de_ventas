@@ -1,0 +1,76 @@
+.contenedor {
+    width: 98%;
+    margin: auto;
+}
+
+section{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#banner{
+    margin-top: 0;
+    position: relative;
+    height: 500px;
+
+}
+
+#banner figure{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+
+#banner .contenedor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20%);
+    color: #fff;
+}
+
+#banner h2{
+    font-size: 70px;
+}
+
+#paginas .contenedor{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#paginas article{
+    margin: 15px;
+
+}
+
+#paginas h1,h4{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 5px;
+
+}
+
+#paginas img{
+    width: 100%;
+    height: 100%;
+    max-width: 280px;
+    border-radius: 6px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+
+}
+
+#paginas img:hover{
+    transform: scale(1.1);
+}
+
+
+
+@media {
+    .contenedor{
+        width: 1300px;
+    }
+}

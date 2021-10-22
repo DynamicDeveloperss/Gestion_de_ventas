@@ -122,6 +122,7 @@ const Vendedores = () => {
                                     </tr>
                                 );
                             })}
+
                         </table>
                     </div>
                     
@@ -132,7 +133,6 @@ const Vendedores = () => {
             </section>
         </main>
     </div>
-    
     )
 }
 
