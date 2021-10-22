@@ -1,41 +1,84 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import './vendedores.css';
+import axios from 'axios'
 import logo from './Icono.png'
 
 const Vendedores = () => {
-    const datosIniciales = [
-    ];
 
     const formVenta = useRef(null);
-    const [datos, setDatos] = useState(datosIniciales);
-  
-    //const [agregarPoducto, setAgregarProducto] = useState(false);
-  
-    // Función que captura los datos del formulario
-    const enviarDatos = (e) => {
-      e.preventDefault(); // Evita que el navegador refresque la página luego de un submit
-      const fd = new FormData(formVenta.current); // Aqui se almacena la informacion del formulario
-      const nuevaVenta = {};
-      e.target.reset();
-      fd.forEach((item, key) => {
-        nuevaVenta[key] = item;
-      });
-      console.log(nuevaVenta);
-      setDatos([...datos, nuevaVenta]);
+    const [datos, setDatos] = useState([]);
+    // const [keyword, setKeyword] = useState('');
+    // const [filtro, setFiltro] = useState([]);
+
+    useEffect(() => {
+        obtenerVentas();
+    }, []);
+    
+      const obtenerVentas = async () => {
+        const options = { method: 'GET', url: 'http://localhost:5000/obtenervendedores' };
+        await axios
+          .request(options)
+          .then(function (response) {
+            setDatos(response.data);
+            //setFiltro(response.data);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+        };
+
+    
+
+    const enviarData = async (e) => {
+        e.preventDefault()
+        const fd = new FormData(formVenta.current); // Aqui se almacena la informacion del formulario
+        const nuevaVenta = {};
+        e.target.reset();
+        fd.forEach((item, key) => {
+            nuevaVenta[key] = item;
+        });
+        setDatos([...datos, nuevaVenta]);
+        // console.log('enviando datos...' + JSON.stringify(datos))
+        // try {
+        //     await axios.post('http://localhost:5000/agregavendedores', datos);
+        //     alert ("informacion enviada");
+    
+        // } catch (error) {
+        //     console.error("hubo un error" + error);
+        // }
+        const options = {
+            method: 'POST',
+            url: 'http://localhost:5000/agregavendedores',
+            headers: { 'Content-Type': 'application/json' },
+            data: {
+              lastname: nuevaVenta.lastname,
+              sailsName: nuevaVenta.sailsName,
+              phone: nuevaVenta.phone,
+              dateOfAdmision: nuevaVenta.dateOfAdmision,
+              sailsId: nuevaVenta.sailsId,
+            },
+          };
+
+          await axios
+            .request(options)
+            .then(function (response) {
+                obtenerVentas();
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+
 
     };
 
-    // const enviarDatos = async (event) => {
-    //     event.preventDefault()
-    //     console.log('enviando datos...' + JSON.stringify(datos))
-    //     try {
-    //         await axios.post('http://localhost:5000/agregaRoles', datos);
-    //         alert ("informacion enviada");
-            
-    //     } catch (error) {
-    //         console.error("hubo un error" + error);
-    //     }
-    // }
+    // useEffect(() => {
+    //     setFiltro(
+    //       datos.filter((elemento) => {
+    //         return JSON.stringify(elemento).toLowerCase().includes(keyword.toLowerCase());
+    //       })
+    //     );
+    // }, [keyword]);
+
 
     return (
         <div>
@@ -45,7 +88,7 @@ const Vendedores = () => {
                 <h1 className="titulo-principal">DYNAMIC HARDWARE</h1>
             </section>
             <section>    
-                <form ref={formVenta} onSubmit={enviarDatos} id="formTable" action="" className="forms">
+                <form ref={formVenta} onSubmit={enviarData} id="formTable" action="" className="forms">
                     <h3 className="subtitulos">REGISTRO DE VENDEDORES</h3>
                     <br/>
                         <label for="lastname">Apellidos </label>
@@ -65,7 +108,6 @@ const Vendedores = () => {
                                 <th>ID Vendedor</th>
                                 <th>Nombres</th>
                                 <th>Apellidos</th>
-                    
                                 <th>Telefono</th>
                                 <th>Fecha de Ingreso</th>
                             </thead>
@@ -75,7 +117,6 @@ const Vendedores = () => {
                                         <td>{item.sailsId}</td>
                                         <td>{item.sailsName}</td>
                                         <td>{item.lastname}</td>
-
                                         <td>{item.phone}</td>
                                         <td>{item.dateOfAdmision}</td>
                                     </tr>
