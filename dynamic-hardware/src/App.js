@@ -1,4 +1,5 @@
 import React from 'react';
+import { Component } from "react";
 import Vendedores from "./components/modulo-vendedores/Vendedores";
 import Login from "./components/login/Login";
 import {Productos}  from "./components/AdmdeProductos/Productos";
@@ -8,7 +9,8 @@ import Home from './components/paginaHome/Home';
 import{BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
-function App() {
+class App extends Component {
+  render() {
   return (
     <div>
     <Router>
@@ -33,12 +35,9 @@ function App() {
         </Route> 
     </Switch>
     </Router>
-
-
     </div>
   );
 };
-
 
 export default App;
 
