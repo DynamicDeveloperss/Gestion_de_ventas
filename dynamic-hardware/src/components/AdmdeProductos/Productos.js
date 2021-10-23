@@ -2,6 +2,7 @@ import React, {useState,} from 'react';
 import axios from 'axios';
 import './Productos.css'
 import logo from './Icono.png'
+import Header from '../header/Header';
 
 
 
@@ -38,6 +39,7 @@ const Productos = () => {
 
     return (
         <div>
+            <Header/>
             <body className="grid-container">
                 <main className="main">
                     <section className="main-logo">

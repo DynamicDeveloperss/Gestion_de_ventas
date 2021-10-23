@@ -2,10 +2,12 @@ import React from 'react'
 import './Login.css'
 import logo from './Icono.png'
 import computador from './Foto Login.jpg'
+import Header from '../header/Header';
 
 const Login = () => {
     return (        
             <body>
+                <Header/>
                 <div className="contenedor">
                     <div className="login-img">
                         <img src={computador} />

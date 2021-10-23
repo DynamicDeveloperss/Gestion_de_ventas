@@ -2,6 +2,7 @@ import React, {useState,} from 'react';
 import axios from 'axios';
 import './roles.css';
 import logo from './Icono.png';
+import Header from '../header/Header';
 
 
   
@@ -39,7 +40,9 @@ const Roles =() => {
 
       
     return (
-        <div className = "grid-container">
+    <div className = "grid-container">
+       <main className="main">
+        <Header/>
           <main className="main">
             <section  className="main-logo"> 
                 <img src={logo} alt="Logo" className="logo-Grande"/>
@@ -81,7 +84,9 @@ const Roles =() => {
                     </form>
             </section>
         </main> 
+
         </div>
+
     );
 }
 
