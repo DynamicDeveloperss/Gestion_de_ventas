@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (       
     <header className="header">
-    <div className="contenedor_sidebar">
+      <div className="contenedor_sidebar">
         <Sidebar/>  
         <div className="nombre-logo">           
         <img src={logo} alt="Logo" className="logo" />
@@ -15,12 +15,8 @@ const Header = () => {
       </div>
       </div>
       <nav>
-        <ul className="nav-bar">
+        <ul class="nav-bar">
           <li>
-            <i className="fas fa-home"></i>
-          </li>
-          <li>
-      
               <Link to= "/login">
               <i class="fas fa-home"></i>
               </Link>
@@ -29,7 +25,7 @@ const Header = () => {
           <Link to= "/vendedores">
               <button type="button" className="btn-navbar">Cerrar sesion</button>
               </Link>
-              </li
+              </li>
         </ul>
       </nav>
     </header>
