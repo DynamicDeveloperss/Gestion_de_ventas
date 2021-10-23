@@ -21,7 +21,7 @@ const Ventas = () => {
   }, []);
 
   const obtenerVentas = async () => {
-    const options = { method: 'GET', url: 'http://localhost:5000/obtenerVentas' };
+    const options = { method: 'GET', url: 'https://vast-castle-10160.herokuapp.com/obtenerVentas' };
     await axios
       .request(options)
       .then(function (response) {
@@ -46,7 +46,7 @@ const Ventas = () => {
 
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/agregarVenta',
+      url: 'https://vast-castle-10160.herokuapp.com/agregarVenta',
       headers: { 'Content-Type': 'application/json' },
       data: {
         id_venta: nuevaVenta.id_venta,
