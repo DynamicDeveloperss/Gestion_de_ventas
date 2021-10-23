@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import axios from 'axios'
 import './Login.css'
 import logo from './Icono.png'
 import computador from './Foto Login.jpg'
 import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { withRouter } from 'react-router-dom';
 
 const CLIENT_ID = "788811814863-doldm5d1gdgpgp1qj9vkeq7m8qnbrs9d.apps.googleusercontent.com"
 
-export default class Login extends Component {
+class Login extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,13 +21,28 @@ export default class Login extends Component {
         }
       
     // Success Handler
-    responseGoogleSuccess = (response) => {
-        console.log();
-        let userInfo = {
-            name: response.profileObj.name,
-            emailId: response.profileObj.email,
-        };
-        this.setState({ userInfo, isLoggedIn: true });
+    responseGoogleSuccess = async (response) => {
+        try {
+            console.log(response.profileObj)
+            const result = await axios.post('http://localhost:5000/verificarRol', {
+                id: response.profileObj.googleId,
+                nombre: response.profileObj.givenName,
+                apellido: response.profileObj.familyName,
+                correo: response.profileObj.email
+            });
+            console.log(result)
+
+            let userInfo = {
+                name: response.profileObj.name,
+                emailId: response.profileObj.email,
+            };
+            this.setState({ userInfo, isLoggedIn: true });
+            this.props.history.push({
+                pathname: `/home`
+            });
+        } catch (error) {
+            
+        }
     };
       
     // Error Handler
@@ -97,3 +114,5 @@ export default class Login extends Component {
         )
     }
 }
+
+export default withRouter(Login);

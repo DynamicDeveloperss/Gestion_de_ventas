@@ -2,6 +2,7 @@ import React, {useRef, useState, useEffect} from 'react'
 import './vendedores.css';
 import axios from 'axios'
 import logo from './Icono.png'
+import Header from '../header/Header';
 
 const Vendedores = () => {
 
@@ -82,6 +83,7 @@ const Vendedores = () => {
 
     return (
         <div>
+            <Header/>
             <main className="main">
             <section  className="main-logo"> 
                 <img src={logo} alt="Logo" className="logo-Grande"/>

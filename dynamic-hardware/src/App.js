@@ -2,14 +2,14 @@ import React from 'react';
 import { Component } from "react";
 import Vendedores from "./components/modulo-vendedores/Vendedores";
 import Login from "./components/login/Login";
-import {Productos}  from "./components/AdmdeProductos/Productos";
+import Productos  from "./components/AdmdeProductos/Productos";
 import Roles from './components/modulo_roles/Roles';
 import Ventas from './components/ventas/Ventas';
 import Home from './components/paginaHome/Home';
 import{BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
-class App extends Component {
+export default class App extends Component {
   render() {
   return (
     <div>
@@ -38,6 +38,7 @@ class App extends Component {
     </div>
   );
 };
+};
 
-export default App;
+
 
