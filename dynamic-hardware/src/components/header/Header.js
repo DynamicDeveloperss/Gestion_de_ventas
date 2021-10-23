@@ -3,7 +3,19 @@ import './header.css';
 import logo from './Icono.png';
 import Sidebar from '../sidebar/Sidebar';
 import { Link } from 'react-router-dom';
+import { useGoogleLogin, GoogleLogout } from "react-google-login";
+import { useHistory } from "react-router-dom";
+
+const CLIENT_ID = "788811814863-doldm5d1gdgpgp1qj9vkeq7m8qnbrs9d.apps.googleusercontent.com";
+
 const Header = () => {
+  
+  const history = useHistory();
+
+  const logout = () => {
+    history.push("/login")
+  }
+
   return (       
     <header className="header">
       <div className="contenedor_sidebar">
@@ -15,17 +27,18 @@ const Header = () => {
       </div>
       </div>
       <nav>
-        <ul class="nav-bar">
+        <ul className="nav-bar">
           <li>
-              <Link to= "/login">
+              <Link to= "/home">
               <i class="fas fa-home"></i>
               </Link>
           </li>
           <li>
-          <Link to= "/vendedores">
-              <button type="button" className="btn-navbar">Cerrar sesion</button>
-              </Link>
-              </li>
+          <GoogleLogout
+              clientId={CLIENT_ID}
+              onLogoutSuccess={logout}
+            ></GoogleLogout>
+            </li>
         </ul>
       </nav>
     </header>

@@ -1,19 +1,22 @@
 import React from 'react';
+import { Component } from "react";
 import Vendedores from "./components/modulo-vendedores/Vendedores";
 import Login from "./components/login/Login";
-import { Productos } from "./components/AdmdeProductos/Productos";
+import Productos  from "./components/AdmdeProductos/Productos";
 import Roles from './components/modulo_roles/Roles';
 import Ventas from './components/ventas/Ventas';
+import Home from './components/paginaHome/Home';
 import{BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
-function App() {
+export default class App extends Component {
+  render() {
   return (
     <div>
     <Router>
-      <Switch>
-        <Route path = '/login'>
-          <Login/>
+    <Switch>
+        <Route path = '/home'>
+          <Home/>
         </Route>
         <Route path = '/vendedores'>
           <Vendedores/>
@@ -27,14 +30,15 @@ function App() {
         <Route path= '/ventas'>
           <Ventas/>
         </Route>
+        <Route path = '/'>
+          <Login/>
+        </Route> 
     </Switch>
     </Router>
     </div>
   );
 };
+};
 
 
-
-
-export default App;
 
