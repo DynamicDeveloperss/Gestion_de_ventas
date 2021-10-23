@@ -17,17 +17,17 @@ const Vendedores = () => {
                 <form action="" className="forms">
                     <h3 className="subtitulos">REGISTRO DE VENDEDORES</h3>
                     <br/>
-                        <label for="apellidos">Apellidos </label>
+                        <label htmlFor="apellidos">Apellidos </label>
                         <input type="text" name="apellidos" placeholder="Perez Perez" />
-                        <label for="nombre">Nombres </label>
+                        <label htmlFor="nombre">Nombres </label>
                         <input  type="text" name="nombre" placeholder="Pepito " />
-                        <label for="email">Especialidad</label>
+                        <label htmlFor="email">Especialidad</label>
                         <input type="text" placeholder="Especialidad" required/>                
-                        <label for="telefono">Telefono</label>
+                        <label htmlFor="telefono">Telefono</label>
                         <input name="telefono"placeholder="Telefono" type="text" />
-                        <label for="fecha">Fecha de Ingreso</label>
+                        <label htmlFor="fecha">Fecha de Ingreso</label>
                         <input name="fecha" type="date"/>
-                        <label for="codigo">Identificacion </label>
+                        <label htmlFor="codigo">Identificacion </label>
                         <input name="identificacion" placeholder="1012345679" type="number"/>     
                     <br/>
                     <div className="table-container">

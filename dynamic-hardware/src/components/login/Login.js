@@ -5,8 +5,7 @@ import computador from './Foto Login.jpg'
 import Header from '../header/Header';
 
 const Login = () => {
-    return (
-        <div>
+    return (        
             <body>
                 <Header/>
                 <div className="contenedor">
@@ -17,7 +16,7 @@ const Login = () => {
                         <div className="section_right_container">
                             <img src={logo} width="100" height="100" />
                         </div>
-                        <div classNameName="section_right_container_form">
+                        <div className="section_right_container_form">
                             <form>
                                 <div className="form-group">
                                     <div className="content-username" >
@@ -35,7 +34,7 @@ const Login = () => {
                     </div>
                 </div>
             </body>
-        </div>
+        
     )
 }
 
