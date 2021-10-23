@@ -1,3 +1,0 @@
-nombre : Cindy Guzman
-rol: Analista
-grupo: Dynamic Developers
