@@ -15,8 +15,8 @@ export default class App extends Component {
     <div>
     <Router>
     <Switch>
-        <Route path = '/login'>
-          <Login/>
+        <Route path = '/home'>
+          <Home/>
         </Route>
         <Route path = '/vendedores'>
           <Vendedores/>
@@ -31,7 +31,7 @@ export default class App extends Component {
           <Ventas/>
         </Route>
         <Route path = '/'>
-          <Home/>
+          <Login/>
         </Route> 
     </Switch>
     </Router>
